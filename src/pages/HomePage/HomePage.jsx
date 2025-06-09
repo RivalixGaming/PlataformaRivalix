@@ -10,7 +10,7 @@ export default function Home() {
       <header>
         <NavBar />
       </header>
-      <main>
+      <main className="main-content">
         <section className="section_um_home">
           <div className="container_carrossel_home">
             <div className="container_infos_carrossel_home">
