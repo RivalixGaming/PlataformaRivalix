@@ -4,6 +4,7 @@ import logoDark from '../../assets/logoDark.png';
 import iconUser from "../../assets/icon-teste-2.png";
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -74,35 +75,80 @@ export default function NavBar() {
       </nav>
 
       <aside style={{ display: width > 1024 || visivel ? "flex" : "none" }}>
-        <div className="fixo_cima">
-          <div className="container_links links_Navegacao">
-            <h2 className="titulo_aside">Navegações</h2>
-            <ul>
-              <li><a href="#"><i className="ri-home-2-fill"></i>Início</a></li>
-              <li><a href="#"><i className="ri-sword-fill"></i>Torneios</a></li>
-              <li><a href="#"><i className="ri-sort-desc"></i>Ranking</a></li>
-              <li><a href="#"><i className="ri-team-fill"></i>Feed</a></li>
-            </ul>
-          </div>
+       <div className="fixo_cima">
+      <div className="container_links links_Navegacao">
+        <h2 className="titulo_aside">Navegações</h2>
+        <ul>
+          <li>
+            <Link to="/home">
+              <i className="ri-home-2-fill"></i>Início
+            </Link>
+          </li>
+          <li>
+            <Link to="/torneios">
+              <i className="ri-sword-fill"></i>Torneios
+            </Link>
+          </li>
+          <li>
+            <Link to="/ranking">
+              <i className="ri-sort-desc"></i>Ranking
+            </Link>
+          </li>
+          <li>
+            <Link to="/feed">
+              <i className="ri-team-fill"></i>Feed
+            </Link>
+          </li>
+        </ul>
+      </div>
 
-          <div className="container_links espacos_reservados">
-            <h2 className="titulo_aside">Espaços Reservados</h2>
-            <ul>
-              <li><a href="#"><i className="ri-shopping-bag-2-fill"></i>Loja</a></li>
-              <li><a href="#"><i className="ri-multi-image-fill"></i>Galeria</a></li>
-              <li><a href="#"><i className="ri-gift-fill"></i>Recompensas</a></li>
-              <li><a href="#"><i className="ri-notification-3-fill"></i>Notificações</a></li>
-              <li><a href="#"><i className="ri-diamond-fill"></i>Planos</a></li>
-            </ul>
-          </div>
+      <div className="container_links espacos_reservados">
+        <h2 className="titulo_aside">Espaços Reservados</h2>
+        <ul>
+          <li>
+            <Link to="/loja">
+              <i className="ri-shopping-bag-2-fill"></i>Loja
+            </Link>
+          </li>
+          <li>
+            <Link to="/galeria">
+              <i className="ri-multi-image-fill"></i>Galeria
+            </Link>
+          </li>
+          <li>
+            <Link to="/recompensas">
+              <i className="ri-gift-fill"></i>Recompensas
+            </Link>
+          </li>
+          <li>
+            <Link to="/notificacoes">
+              <i className="ri-notification-3-fill"></i>Notificações
+            </Link>
+          </li>
+          <li>
+            <Link to="/planos">
+              <i className="ri-diamond-fill"></i>Planos
+            </Link>
+          </li>
+          <li>
+            <Link to="/configuracoes">
+              <i className="ri-settings-3-fill"></i>Configurações
+            </Link>
+          </li>
+        </ul>
+      </div>
 
-          <div className="container_links faq_ajuda">
-            <h2 className="titulo_aside">Ajuda</h2>
-            <ul>
-              <li><a href="#"><i className="ri-chat-1-fill"></i>FAQ</a></li>
-            </ul>
-          </div>
-        </div>
+  <div className="container_links faq_ajuda">
+    <h2 className="titulo_aside">Ajuda</h2>
+    <ul>
+      <li>
+        <Link to="/faq">
+          <i className="ri-chat-1-fill"></i>FAQ
+        </Link>
+      </li>
+    </ul>
+  </div>
+</div>
 
         <div className="fixo_baixo">
           <div className="container_perfil">
@@ -111,14 +157,16 @@ export default function NavBar() {
                 <img src={iconUser} alt="Foto do usuário" className="foto_usuario" />
               </div>
               <div className="nomes">
-                <p>nome</p>
-                <p>Nível</p>
+                <div className="nomes">
+                  <Link to="/perfil" className="nome-link">nome</Link>
+                  <p>Nível</p>
+                </div>
               </div>
             </div>
             <div className="config_perfil">
-              <a href="#">
+              <Link to="/configuracoes" className="config_link">
                 <i className="ri-settings-3-fill"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -126,11 +174,11 @@ export default function NavBar() {
 
       <section className="nav2">
         <ul>
-          <li><a href="#"><i className="ri-home-2-fill"></i>Início</a></li>
-          <li><a href="#"><i className="ri-sword-fill"></i>Torneios</a></li>
-          <li><a href="#"><i className="ri-sort-desc"></i>Ranking</a></li>
-          <li><a href="#"><i className="ri-team-fill"></i>Feed</a></li>
-          <li><a href="#"><i className="ri-user-3-fill"></i>Perfil</a></li>
+          <li><Link to="/home"><i className="ri-home-2-fill"></i>Início</Link></li>
+          <li><Link to="/torneios"><i className="ri-sword-fill"></i>Torneios</Link></li>
+          <li> <Link to="/ranking"><i className="ri-sort-desc"></i>Ranking</Link></li>
+          <li> <Link to="/feed"><i className="ri-team-fill"></i>Feed</Link></li>
+          <li> <Link to="/perfil"><i className="ri-user-3-fill"></i>Perfil</Link></li>
         </ul>
       </section>
     </header>

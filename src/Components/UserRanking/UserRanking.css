@@ -1,0 +1,37 @@
+.user-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.user-avatar{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-card-pontos{
+    text-align: center;
+    background-color: rgb(114, 111, 111);
+    color: white;
+    padding: 7px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.user-name{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    
+}
+
+.user-points{
+    font-size: 1rem;
+    color: var(--text-color);
+}

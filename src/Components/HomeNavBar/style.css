@@ -29,9 +29,13 @@
   background-color: var(--bg-color);
   /* background: transparent; */
   height: 120px;
-  border-bottom: 2px solid var(--text-color);
-  z-index: 1000;
+  border-bottom: 3px solid rgba(28, 28, 28, 0.4);
+  z-index: 2;
   position: relative;
+}
+
+.dark-mode .container_header {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo_rivalix {
@@ -106,13 +110,15 @@
   align-items: center;
   border-radius: 50%;
   border: 2px solid white;
-  box-shadow: 0 0 8px var(--roxo-vivo);
+  box-shadow: 0 0 12px var(--roxo-vivo);
   width: 50px;
   height: 50px;
+  transition: 0.3 ease-in-out;
 }
 
 .container_icons div:hover {
   box-shadow: 0 0 15px var(--roxo-vivo);
+  transform: scale(1.05);
 }
 
 .container_icons a {
@@ -155,9 +161,12 @@ aside {
   top: 120px;
   left: 0;
   background-color: var(--bg-color);
-  border-right: 2px solid var(--text-color);
+  border-right: 3px solid rgba(28, 28, 28, 0.4);
   height: calc(100vh - 80px);
-  z-index: 900;
+}
+
+.dark-mode aside {
+  border-right: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo_aside_rivalix {
@@ -234,11 +243,15 @@ li {
 
 .fixo_baixo {
   flex-shrink: 0;
-  border-top: 2px solid var(--text-color);
+  border-top: 2px solid rgba(28, 28, 28, 0.7);
   padding: 20px;
   box-shadow: 0 -8px 16px -8px var(--roxo-vivo);
   margin-bottom: 20px;
   z-index: 10;
+}
+
+.dark-mode .fixo_baixo {
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .container_img {
@@ -260,6 +273,8 @@ li {
   background-image: var(--preto);
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 12px var(--roxo-vivo);
+  border: 2px solid var(--off-white);
 }
 
 .container_perfil {
@@ -273,6 +288,15 @@ li {
   gap: 10px;
   flex: 1;
   min-width: 0;
+}
+
+.nome-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+}
+.nome-link:hover {
+  color: var(--laranja); 
 }
 
 .infos_perfil_home .nomes {
@@ -308,7 +332,7 @@ li {
   width: 100%;
   height: 110px;
   background-color: var(--bg-color);
-  border-top: 2px solid var(--text-color);
+  border-top: 2px solid var(--off-white);
   z-index: 1000;
 }
 
@@ -409,6 +433,7 @@ li {
     border-bottom: 2px solid black;
     border-right: none;
     position: fixed;
+    z-index: 9999;
   }
 
   .menu_hamburger {
@@ -445,4 +470,8 @@ li {
   .nav2 {
     height: 85px;
   }
+}
+
+header {
+  z-index: 2;
 }
