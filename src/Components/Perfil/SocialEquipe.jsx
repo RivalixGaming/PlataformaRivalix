@@ -58,15 +58,24 @@ export default function SocialEquipePerfil({ redes = [], equipe, isOwner }) {
 
   const toggleEditar = (index) => {
     const novaLista = [...links];
-    novaLista[index].editando = !novaLista[index].editando;
-    setLinks(novaLista);
+  const rede = novaLista[index];
+
+  if (rede.editando && rede.nome.trim() === "@") {
+    novaLista.splice(index, 1);
+  } else {
+    rede.editando = !rede.editando;
+  }
+
+  setLinks(novaLista);
   };
 
   const handleNomeChange = (index, novoNome) => {
     const novaLista = [...links];
+    const novoTrimado = novoNome.trim().replace(/^@/, "");
     const redeSelecionada = redesDisponiveis[novaLista[index].tipo];
-    novaLista[index].nome = `@${novoNome.replace(/^@/, "")}`;
-    novaLista[index].link = redeSelecionada.url(novoNome.replace(/^@/, ""));
+
+    novaLista[index].nome = `@${novoTrimado}`;
+    novaLista[index].link = redeSelecionada.url(novoTrimado);
     setLinks(novaLista);
   };
 

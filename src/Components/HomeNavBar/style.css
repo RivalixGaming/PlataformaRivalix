@@ -29,13 +29,13 @@
   background-color: var(--bg-color);
   /* background: transparent; */
   height: 120px;
-  border-bottom: 3px solid rgba(28, 28, 28, 0.4);
+  border-bottom: 2px solid rgba(28, 28, 28, 0.4);
   z-index: 2;
   position: relative;
 }
 
 .dark-mode .container_header {
-  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo_rivalix {
@@ -161,12 +161,12 @@ aside {
   top: 120px;
   left: 0;
   background-color: var(--bg-color);
-  border-right: 3px solid rgba(28, 28, 28, 0.4);
+  border-right: 2px solid rgba(28, 28, 28, 0.4);
   height: calc(100vh - 80px);
 }
 
 .dark-mode aside {
-  border-right: 3px solid rgba(255, 255, 255, 0.2);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo_aside_rivalix {
@@ -251,7 +251,7 @@ li {
 }
 
 .dark-mode .fixo_baixo {
-  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .container_img {

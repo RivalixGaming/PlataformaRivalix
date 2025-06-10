@@ -3,12 +3,15 @@ import NavbarHome from "../../Components/HomeNavBar/NavBarHome.jsx";
 import { ThemeContext } from '../../contexts/ThemeContext';
 import logoClaro from '../../assets/logoClaro.png';
 import logoDark from '../../assets/LogoDark.png';
+import { useProfile } from '../../contexts/ProfileContext';
+import SelecionarAvatar from '../../Components/SelecionarAvatar/SelecionarAvatar.jsx';
 import './Configuracoes.css';
 
 export default function ConfiguracoesPage() {
     const { theme, setTheme } = useContext(ThemeContext);
     const isDark = theme === 'dark';
     const logo = isDark ? logoDark : logoClaro;
+     const [mostrarSelecionador, setMostrarSelecionador] = useState(false);
 
     // Troca de tema
     const handleToggle = (e) => {
@@ -16,18 +19,8 @@ export default function ConfiguracoesPage() {
         setTheme(newTheme);
     };
 
-    // Função para envio de imagem
-    const handleUploadImage = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-        console.log("Imagem selecionada:", file.name);
-        // TODO: Enviar para o backend com FormData, etc.
-        }
-    };
-
     const handleChangeUsername = () => {
         console.log("Abrir modal para mudar nome de usuário");
-        // TODO: abrir modal ou enviar requisição
     };
 
     const handleChangeBio = () => {
@@ -79,17 +72,18 @@ export default function ConfiguracoesPage() {
             <ul>
               <li><button onClick={handleChangeUsername}>Alterar Nome de Usuário</button></li>
 
-                <label htmlFor="upload-foto" className="config-upload-button">
-                    <span>Alterar Foto de Perfil</span>
-                    <i className="ri-pencil-fill"></i>
-                    <input
-                        id="upload-foto"
-                        type="file"
-                        accept="image/*"
-                        style={{ display: 'none' }}
-                        onChange={handleUploadImage}
-                    />
-                </label>
+              <li>
+                <button onClick={() => setMostrarSelecionador(true)}>
+                  Alterar Foto de Perfil <i className="ri-pencil-fill"></i>
+                </button>
+
+                {mostrarSelecionador && (
+                    <SelecionarAvatar onClose={() => setMostrarSelecionador(false)} />
+                )}
+              </li>
+                  {mostrarSelecionador && (
+                    <SelecionarAvatar onClose={() => setMostrarSelecionador(false)} />
+                  )}
 
               <li><button onClick={handleChangeBio}>Alterar Biografia</button></li>
               <li><button onClick={handleChangeGender}>Gênero / Pronomes</button></li>

@@ -4,12 +4,14 @@ import logoDark from '../../assets/logoDark.png';
 import iconUser from "../../assets/icon-teste-2.png";
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { useProfile } from "../../contexts/ProfileContext";
 import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const [width, setWidth] = useState(window.innerWidth);
   const [visivel, setVisivel] = useState(width > 1025);
   const [displaySearch, setDisplaySearch] = useState(width > 1025);
+  const { fotoPerfil } = useProfile();
 
   const { theme, setTheme } = useTheme(); // correto para seu contexto
 
@@ -154,7 +156,7 @@ export default function NavBar() {
           <div className="container_perfil">
             <div className="infos_perfil_home">
               <div className="container_img">
-                <img src={iconUser} alt="Foto do usuário" className="foto_usuario" />
+                <img src={fotoPerfil || iconUser} alt="Foto do usuário" className="foto_usuario" />
               </div>
               <div className="nomes">
                 <div className="nomes">

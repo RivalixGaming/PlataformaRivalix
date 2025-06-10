@@ -3,13 +3,17 @@ import styles from "./BannerSection.module.css";
 import defaultBanner from "../../assets/defaultBanner.png";
 import { useTheme } from "../../contexts/ThemeContext";
 import PerfilCard from "./PerfilCard.jsx";
+import { useProfile } from "../../contexts/ProfileContext";
+import SelecionarAvatar from "../SelecionarAvatar/SelecionarAvatar";
 
-export default function BannerPerfil({ bannerUrl, isOwner, fotoUrl, nome}) {
+export default function BannerPerfil({ bannerUrl, isOwner, nome }) {
   const [menuAberto, setMenuAberto] = useState(false);
+  const [mostrarSelecionador, setMostrarSelecionador] = useState(false);
   const [localBanner, setLocalBanner] = useState(bannerUrl || defaultBanner);
   const menuRef = useRef(null);
   const inputBannerRef = useRef(null);
   const { theme } = useTheme();
+  const { fotoPerfil, setFotoPerfil } = useProfile();
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -25,9 +29,6 @@ export default function BannerPerfil({ bannerUrl, isOwner, fotoUrl, nome}) {
     const file = e.target.files[0];
     if (!file) return;
 
-    const formData = new FormData();
-    formData.append("banner", file);
-
     try {
       const urlTemporaria = URL.createObjectURL(file);
       setLocalBanner(urlTemporaria);
@@ -40,9 +41,8 @@ export default function BannerPerfil({ bannerUrl, isOwner, fotoUrl, nome}) {
   const menuClasse = `${styles.menuOpcoes} ${theme === "dark" ? styles.menuOpcoesDark : ""}`;
 
   return (
-   <div className={styles.bannerPerfil} style={{ backgroundImage: `url(${localBanner})` }}>
-    
-    <PerfilCard nome={nome} fotoUrl={fotoUrl} isOwner={isOwner} />
+    <div className={styles.bannerPerfil} style={{ backgroundImage: `url(${localBanner})` }}>
+      <PerfilCard nome={nome} isOwner={isOwner} />
 
       <div className={styles.menuWrapper} ref={menuRef}>
         <button className={styles.editarBanner} onClick={() => setMenuAberto(!menuAberto)}>
@@ -53,7 +53,7 @@ export default function BannerPerfil({ bannerUrl, isOwner, fotoUrl, nome}) {
           <div className={menuClasse}>
             {isOwner ? (
               <>
-                <button>
+                <button onClick={() => setMostrarSelecionador(true)}>
                   <i className="ri-edit-2-fill"></i> Trocar Foto de Perfil
                 </button>
                 <hr />
@@ -79,6 +79,10 @@ export default function BannerPerfil({ bannerUrl, isOwner, fotoUrl, nome}) {
           />
         )}
       </div>
+
+      {mostrarSelecionador && (
+        <SelecionarAvatar onClose={() => setMostrarSelecionador(false)} />
+      )}
     </div>
   );
 }

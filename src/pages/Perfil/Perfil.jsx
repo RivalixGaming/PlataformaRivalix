@@ -34,7 +34,7 @@ export default function PerfilPage({ user = mockUser, isOwner = true }) {
           fotoUrl={user.foto}
           nome={user.nome}
         >
-          <PerfilCard nome={user.nome} fotoUrl={user.foto} isOwner={isOwner} />
+          <PerfilCard nome="Seu Nome" isOwner={true} />
         </BannerPerfil>
 
         <section className={layoutStyles.perfilGrid}>
