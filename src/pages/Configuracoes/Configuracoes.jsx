@@ -141,6 +141,7 @@ export default function ConfiguracoesPage() {
               <li><button>Pausar Conta Temporariamente</button></li>
               <li><button>Excluir Conta Permanentemente</button></li>
               <li><button>Exportar Dados</button></li>
+              <li><button>Recarga de Saldo</button></li>
               <li><button>Sair da Conta</button></li>
               <li><button>Trocar de Conta</button></li>
             </ul>

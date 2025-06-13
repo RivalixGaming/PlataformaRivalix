@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRegSmile, FaRegEnvelope, FaEye, FaEyeSlash, FaUserAlt } from "react-icons/fa";
+import { useNavigate, Link } from 'react-router-dom';
 import "./Login.css";
 
 export default function LoginPage() {
@@ -15,6 +16,8 @@ export default function LoginPage() {
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [emailLogin, setEmailLogin] = useState("");
   const [senhaLogin, setSenhaLogin] = useState("");
+
+  const navigate = useNavigate();
 
   const emailValido = (email) => email.includes("@");
 
@@ -33,6 +36,7 @@ export default function LoginPage() {
     e.preventDefault();
     if (loginValido) {
       console.log("Login enviado");
+      navigate("/home"); 
     }
   };
 
@@ -40,6 +44,7 @@ export default function LoginPage() {
     e.preventDefault();
     if (cadastroValido) {
       console.log("Cadastro enviado");
+      navigate("/home"); // ✅ Redireciona após cadastro válido
     }
   };
 
@@ -90,7 +95,7 @@ export default function LoginPage() {
                   onChange={(e) => setNomeUsuario(e.target.value)}
                   required
                 />
-                <FaUserAlt className="toggle-password"/>
+                <FaUserAlt className="toggle-password" />
               </div>
 
               <label htmlFor="senha">Senha</label>
@@ -131,7 +136,6 @@ export default function LoginPage() {
             </>
           ) : (
             <>
-
               <label htmlFor="email-login">Email</label>
               <div className="input-icon-wrapper">
                 <input
@@ -166,35 +170,35 @@ export default function LoginPage() {
               <a href="#" className="forgot-password">Esqueceu sua senha?</a>
             </>
           )}
+
+          <div className="form-footer">
+            {isRegistering && (
+              <label className="terms-checkbox">
+                <input
+                  type="checkbox"
+                  checked={acceptedTerms}
+                  onChange={(e) => setAcceptedTerms(e.target.checked)}
+                />
+                <span> Aceito os <a href="#">termos de uso e privacidade</a></span>
+              </label>
+            )}
+
+            <button
+              type="submit"
+              className="auth-button"
+              disabled={isRegistering ? !cadastroValido : !loginValido}
+            >
+              {isRegistering ? "Cadastrar" : "Entrar"}
+            </button>
+
+            <p className="toggle-auth">
+              {isRegistering ? "Já tem uma conta? " : "Não tem uma conta? "}
+              <span onClick={() => setIsRegistering(!isRegistering)}>
+                {isRegistering ? "Fazer login" : "Cadastre-se"}
+              </span>
+            </p>
+          </div>
         </form>
-
-        <div className="form-footer">
-          {isRegistering && (
-            <label className="terms-checkbox">
-              <input
-                type="checkbox"
-                checked={acceptedTerms}
-                onChange={(e) => setAcceptedTerms(e.target.checked)}
-              />
-              <span> Aceito os <a href="#">termos de uso e privacidade</a></span>
-            </label>
-          )}
-
-          <button
-            type="submit"
-            className="auth-button"
-            disabled={isRegistering ? !cadastroValido : !loginValido}
-          >
-            {isRegistering ? "Cadastrar" : "Entrar"}
-          </button>
-
-          <p className="toggle-auth">
-            {isRegistering ? "Já tem uma conta? " : "Não tem uma conta? "}
-            <span onClick={() => setIsRegistering(!isRegistering)}>
-              {isRegistering ? "Fazer login" : "Cadastre-se"}
-            </span>
-          </p>
-        </div>
       </div>
     </section>
   );

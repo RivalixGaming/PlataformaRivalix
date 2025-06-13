@@ -89,3 +89,8 @@ body.dark-mode {
   }
 
 }
+
+div[vw-access-button].active {
+  bottom: 80px !important;
+  right: 10px !important;  
+}
