@@ -34,8 +34,9 @@
     max-width: 360px;
 }
   
-.footerLogo span {
-    color: #ff6600;
+.footerLogo p {
+    text-align: center;
+    font-size: 1.125rem;
 }
   
 .social-icons a img {
@@ -56,15 +57,28 @@
     padding: 0;
     margin-top: 20px;
 }
+
+.footer-contact li a{
+    text-decoration: none;
+    color: var(--text-color);
+}
   
 .footer-links li, .footer-contact li {
     margin-bottom: 10px;
+}
+
+.footer-links li a:hover, .footer-contact li a:hover {
+    color: #FF6A00;
 }
   
 .footer-links a, .footer-policy a {
     text-decoration: none;
     color: #1e1e1e;
     font-weight: 500;
+}
+
+.footer-links a:hover, .footer-policy a:hover {
+    color: #FF6A00;
 }
   
 .footer-bottom {

@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footerLogo">
           <img src={logo} alt="Logo Rivalix" />
           <p>
-            <strong>Criada por jogadores. Movida por paixão. Feita para a comunidade.</strong>
+            <strong>Conectando Campeões</strong>
           </p>
           <div className="social-icons">
             <a href="https://www.instagram.com/rivalix.oficial" target="_blank" rel="noopener noreferrer">
@@ -39,7 +39,7 @@ const Footer = () => {
           <ul>
             <li><strong>Rivalix</strong></li>
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#Eventos">Eventos</a></li>
+            <li><a href="#Eventos">FAQ</a></li>
             <li><a href="#Loja">Loja</a></li>
             <li><a href="#Sobre Nós">Sobre Nós</a></li>
           </ul>
@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="footer-contact">
           <ul>
             <li><strong>Contato</strong></li>
-            <li>rivalix.oficial@gmail.com</li>
+            <li><a href="#">rivalix.oficial@gmail.com</a></li>
           </ul>
         </div>
       </div>

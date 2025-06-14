@@ -196,12 +196,14 @@
     border: 2px solid #A020F0;
     color: #e8e5DE;
     border-radius: 25px;
-    font-size: 1,1rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
     transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
 }
 
 .card:hover .play-btn {

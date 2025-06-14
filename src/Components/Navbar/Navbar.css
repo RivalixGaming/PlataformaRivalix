@@ -36,6 +36,10 @@
     color: black;
     font-size: 1.125rem;
 }
+
+.nav-links li a:hover {
+    color: #FF6A00;
+}
   
 .nav-right {
     display: flex;

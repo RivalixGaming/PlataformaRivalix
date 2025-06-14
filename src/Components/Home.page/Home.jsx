@@ -328,7 +328,7 @@ ScrollReveal().reveal('.selo-more', {
               {jogos.map((jogo, index) => (
                 <div className="card" key={index}>
                   <img src={jogo.img} alt={jogo.alt} />
-                  <button className="play-btn">Jogue Agora</button>
+                  <Link to="/login" className="play-btn" role="button">Jogue Agora</Link>
                 </div>
               ))}
             </div>
