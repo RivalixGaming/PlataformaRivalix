@@ -5,13 +5,16 @@ import { router } from './routes';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ProfileProvider } from './contexts/ProfileContext';
 import 'remixicon/fonts/remixicon.css';
+import { SavedArtesProvider } from './contexts/SavedArtesContext';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider>
        <ProfileProvider>
-      <RouterProvider router={router} />
+        <SavedArtesProvider>
+          <RouterProvider router={router} />
+        </SavedArtesProvider>
       </ProfileProvider>
     </ThemeProvider>
   </StrictMode>

@@ -9,6 +9,9 @@ import Home from "../pages/HomePage/HomePage";
 import Feed from "../pages/Feed/Feed";
 import Ranking from "../pages/Ranking/Ranking";
 import Planos from "../pages/Planos/Planos";
+import Notificacoes from "../pages/Notificacao/Notificacoes" 
+import Galeria from "../pages/Galeria/Galeria"
+import ArtesSalvas from  "../pages/Galeria/ArtesSalvas"
 // Importando as páginas necessárias para as rotas
 
 export const router = createBrowserRouter([
@@ -25,6 +28,9 @@ export const router = createBrowserRouter([
       { path: "/feed", element: <Feed />},
       { path: "/ranking", element: <Ranking />},
       { path: "/planos", element: <Planos />},
+      { path: "/notificacoes", element: <Notificacoes />},
+      { path: "/galeria", element: <Galeria />},
+      { path: "/artes-salvas", element: <ArtesSalvas />},
     ]
   }
 ]);

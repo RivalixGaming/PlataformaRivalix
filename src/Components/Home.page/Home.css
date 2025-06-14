@@ -192,7 +192,7 @@
     left: 50%;
     transform: translate(-50%, 100%);
     padding: 12px 24px;
-    background-color: transparent;
+    background: #A020F0;
     border: 2px solid #A020F0;
     color: #e8e5DE;
     border-radius: 25px;
@@ -207,30 +207,31 @@
 }
 
 .card:hover .play-btn {
-    opacity: 1;
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
 .play-btn:hover {
-    background: #A020F0;
-    transform: translate(-50%, 100%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 10px #a020f0;
 }
 
 .play-btn::after {
-    margin-left: 8px;
-    transition: margin-left 0.3s ease;
+  margin-left: 8px;
+  transition: margin-left 0.3s ease;
 }
 
 .play-btn:hover::after {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .barras-decorativas {

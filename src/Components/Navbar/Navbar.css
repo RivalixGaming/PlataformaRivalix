@@ -180,6 +180,9 @@ input:checked + .slider::before {
 }
 
 @media (max-width: 1024px) {
+    .navbar{
+        position: fixed;
+    }
     .nav-center,
     .nav-right {
         display: none;
@@ -191,6 +194,10 @@ input:checked + .slider::before {
 }
 
 @media (max-width: 768px) {
+    .navbar{
+        position: fixed;
+        height: 110px;
+    }
     .hamburger {
       display: flex;
     }
@@ -241,6 +248,10 @@ body.dark-mode .navbar {
 
 body.dark-mode .nav-links a {
     color: #e8e5DE;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #FF6A00;
 }
 
 body.dark-mode .mode {
