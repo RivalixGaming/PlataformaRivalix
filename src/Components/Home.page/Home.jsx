@@ -12,6 +12,9 @@ import torneioImg from '../../assets/participeTorneios.png';
 import arenaImg from '../../assets/torneio-esports.png';
 import comunidadeImg from '../../assets/community_x_transparent.png';
 import perfilImg from '../../assets/personalizePerfil.png';
+import GuiltyGear from '../../assets/GuiltyGear.png';
+import granblue from '../../assets/granblue.png';
+import fatalfury from '../../assets/fatalfury.png';
 
 import controleIcon from '../../assets/icon/controle.svg';
 import calendarioIcon from '../../assets/icon/calendario.svg';
@@ -48,7 +51,10 @@ const Home = () => {
     { img: sfImg, alt: 'Street Fighter 6' },
     { img: brawlhallaImg, alt: 'Brawlhalla' },
     { img: tekkenImg, alt: 'Tekken 8' },
-    { img: mkImg, alt: 'Mortal Kombat 1' }
+    { img: mkImg, alt: 'Mortal Kombat 1' },
+    { img: GuiltyGear, alt: 'Guilty Gear'},
+    { img: granblue, alt: 'Granblue fantasy versus rising'},
+    { img: fatalfury, alt: 'Fatal Fury'}
   ];
 
   useEffect(() => {

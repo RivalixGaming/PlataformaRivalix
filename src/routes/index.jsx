@@ -8,6 +8,7 @@ import Perfil from "../pages/Perfil/Perfil";
 import Home from "../pages/HomePage/HomePage";
 import Feed from "../pages/Feed/Feed";
 import Ranking from "../pages/Ranking/Ranking";
+import Planos from "../pages/Planos/Planos";
 // Importando as páginas necessárias para as rotas
 
 export const router = createBrowserRouter([
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
       { path: "/home", element: <Home />},
       { path: "/feed", element: <Feed />},
       { path: "/ranking", element: <Ranking />},
+      { path: "/planos", element: <Planos />},
     ]
   }
 ]);

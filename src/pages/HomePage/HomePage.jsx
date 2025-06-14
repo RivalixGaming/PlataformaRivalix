@@ -58,7 +58,7 @@ export default function Home() {
                 <UserRanking />
                 <UserRanking />
               </div>
-              <button className="botao_ranking_home">Mostrar Main</button>
+              <button className="botao_ranking_home">Mostrar Mais</button>
             </div>
 
           </div>
