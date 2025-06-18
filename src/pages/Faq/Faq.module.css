@@ -1,0 +1,134 @@
+.container {
+  padding: 0 2rem;
+  margin: 0 auto;
+  color: var(--off-white);
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.categoria {
+  margin-bottom: 3rem;
+}
+
+.categoriaTitulo {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--laranja);
+  border-left: 4px solid var(--roxo-vivo);
+  padding-left: 0.5rem;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #181818;
+}
+
+.pergunta {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--off-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pergunta:hover {
+  background-color: #292929;
+}
+
+.icone {
+  font-size: 1.5rem;
+  color: var(--laranja);
+}
+
+.resposta {
+  padding: 1rem;
+  background-color: #1f1f1f;
+  color: #d1d1d1;
+  border-top: 1px solid #3a3a3a;
+  animation: fade 0.3s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .categoriaTitulo {
+    font-size: 1.4rem;
+  }
+
+  .pergunta {
+    font-size: 0.95rem;
+  }
+
+  .icone {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .categoriaTitulo {
+    font-size: 1.2rem;
+    padding-left: 0.4rem;
+  }
+
+  .pergunta {
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .icone {
+    align-self: flex-end;
+    font-size: 1.3rem;
+  }
+
+  .resposta {
+    font-size: 0.95rem;
+  }
+}
