@@ -9,9 +9,17 @@ import Home from "../pages/HomePage/HomePage";
 import Feed from "../pages/Feed/Feed";
 import Ranking from "../pages/Ranking/Ranking";
 import Planos from "../pages/Planos/Planos";
+<<<<<<< HEAD
 import Notificacoes from "../pages/Notificacao/Notificacoes" 
 import Galeria from "../pages/Galeria/Galeria"
 import ArtesSalvas from  "../pages/Galeria/ArtesSalvas"
+=======
+import Notificacoes from "../pages/Notificacao/Notificacoes"; 
+import Galeria from "../pages/Galeria/Galeria";
+import ArtesSalvas from  "../pages/Galeria/ArtesSalvas";
+import Recompensas from "../pages/Recompensas/Recompensa";
+import Faq from "../pages/Faq/Faq";
+>>>>>>> 1ee056a30538b22297b67679ba2b5568b26e63c8
 // Importando as páginas necessárias para as rotas
 
 export const router = createBrowserRouter([
@@ -31,6 +39,11 @@ export const router = createBrowserRouter([
       { path: "/notificacoes", element: <Notificacoes />},
       { path: "/galeria", element: <Galeria />},
       { path: "/artes-salvas", element: <ArtesSalvas />},
+<<<<<<< HEAD
+=======
+      { path: "/recompensas", element: <Recompensas />},
+      { path: "/faq", element: <Faq />},
+>>>>>>> 1ee056a30538b22297b67679ba2b5568b26e63c8
     ]
   }
 ]);

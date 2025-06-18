@@ -150,7 +150,11 @@
 
 @media (max-width: 767px) {
   .avatarModal {
+<<<<<<< HEAD
     width: 95%;
+=======
+    width: 80%;
+>>>>>>> 1ee056a30538b22297b67679ba2b5568b26e63c8
     padding: 12px 16px;
     max-width: 100%;
   }
