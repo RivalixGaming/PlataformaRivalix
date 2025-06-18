@@ -1,20 +1,17 @@
 import styles from './PostCard.module.css';
-<<<<<<< HEAD
+
 import { FaThumbsUp, FaCommentDots, FaShare } from "react-icons/fa";
-=======
->>>>>>> 1ee056a30538b22297b67679ba2b5568b26e63c8
+
 import { useTheme } from "../../contexts/ThemeContext";
 
 export default function PostCard({ data }) {
   const { autor, avatar, imagem, legenda, verificado } = data;
-<<<<<<< HEAD
-=======
 
   const isVideo = (url) => {
     return url?.match(/\.(mp4|webm|ogg)$/i);
   };
 
->>>>>>> 1ee056a30538b22297b67679ba2b5568b26e63c8
+
    const { theme } = useTheme();
 
   return (
@@ -28,10 +25,6 @@ export default function PostCard({ data }) {
         <button className={styles.menu}><i className="ri-more-2-fill"></i></button>
       </div>
 
-<<<<<<< HEAD
-      {imagem && <img src={imagem} alt="Post" className={styles.imagemPost} />}
-
-=======
       {imagem && (
         isVideo(imagem) ? (
           <video controls className={styles.imagemPost}>
@@ -43,7 +36,6 @@ export default function PostCard({ data }) {
         )
       )}
       
->>>>>>> 1ee056a30538b22297b67679ba2b5568b26e63c8
       <div className={styles.actions}>
         <button>< i class="ri-thumb-up-fill"></i></button>
         <button>< i class="ri-chat-3-fill"></i></button>

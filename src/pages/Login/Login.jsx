@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaRegSmile, FaRegEnvelope, FaEye, FaEyeSlash, FaUserAlt } from "react-icons/fa";
 import { useNavigate, Link } from 'react-router-dom';
 import "./Login.css";
+import { BiColor } from "react-icons/bi";
 
 export default function LoginPage() {
   const [isRegistering, setIsRegistering] = useState(false);
