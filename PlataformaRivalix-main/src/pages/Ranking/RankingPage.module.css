@@ -1,0 +1,210 @@
+.rankingContainer {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    background-color: transparent;
+    box-shadow: 0 0 6px var(--roxo-vivo);
+}
+
+.rankingContainer h2 {
+    font-size: 3rem;
+    color: var(--roxo-escuro);
+    margin-bottom: 10px;
+}
+
+.dark .rankingContainer h2 {
+    color: var(--off-white);
+}
+
+.rankingContainer p {
+    font-size: 1.125rem;
+    margin-bottom: 15px;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0 auto 2rem;
+    max-width: 680px;
+}
+
+.titulo span {
+    color: #ff6a00;
+}
+
+.listaRanking {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cardWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease;
+}
+
+.dark .cardWrapper {
+    background-color: rgba(255, 255, 255, 0.03)
+}
+
+.cardWrapper:hover {
+    transform: scale(1.01);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .cardWrapper:hover {
+   background-color: rgba(255, 255, 255, 0.05) 
+}
+
+.posicao {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ff6a00;
+    width: 40px;
+    text-align: center;
+}
+
+.botaoMais {
+    margin: 2rem auto 0;
+    padding: 10px 100px;
+    background: transparent;
+    border: 2px solid #ff6a00;
+    border-radius: 12px;
+    color: #ff6a00;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+}
+
+.botaoMais:hover {
+    box-shadow: 0 0 12px #ff6a00;
+    text-shadow: 0 0 5px #ff6a00;
+}
+
+@media (max-width: 1024px) {
+  .rankingContainer {
+    padding: 2rem 1.2rem;
+    border-width: 1.5px;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+
+  .rankingContainer h2 {
+    font-size: 2rem;
+  }
+
+  .rankingContainer p {
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  .botaoMais {
+    padding: 10px 60px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .rankingContainer {
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    max-width: 95%;
+  }
+
+  .titulo {
+    font-size: 1.4rem;
+    max-width: 95%;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .rankingContainer h2 {
+    font-size: 1.5rem;
+    text-align: start;
+  }
+
+  .rankingContainer p {
+    font-size: 0.95rem;
+    text-align: start;
+    margin-bottom: 1.2rem;
+  }
+
+  .cardWrapper {
+    padding: 0.8rem;
+    border-radius: 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .posicao {
+    font-size: 0.8rem;
+    width: auto;
+  }
+
+  .botaoMais {
+    padding: 10px 40px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .rankingContainer {
+    padding: 1rem 0.8rem;
+    border-radius: 8px;
+    max-width: 98%;
+  }
+
+  .titulo {
+    font-size: 1.2rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    padding: 0 0.5rem;
+  }
+
+  .rankingContainer h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .rankingContainer p {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .cardWrapper {
+    padding: 0.6rem;
+    gap: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .posicao {
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .botaoMais {
+    padding: 8px 32px;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,269 @@
+
+.section_um_home {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.container_carrossel_home {
+  width: 45%;
+  height: 350px;
+  border-radius: 30px;
+  background-color: #a020f0;
+  display: flex;
+  align-items: center;
+}
+
+.container_infos_carrossel_home {
+  padding-left: 30px;
+  width: 60%;
+}
+
+.container_infos_carrossel_home h2 {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.container_infos_carrossel_home button {
+  border-radius: 15px;
+  border: solid 2px #ff6a00;
+  font-weight: 600;
+  background-color: transparent;
+  color: white;
+  padding: 15px 35px;
+  transition: 0.2s;
+}
+
+.container_infos_carrossel_home button:hover {
+  background-color: #ff6a00;
+  color: white;
+}
+
+.imagem_fliperama_home {
+  z-index: 1;
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin-left: 2%;
+}
+
+.container_ranking_home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 35%;
+  min-height: 350px;
+  border: 2px solid #888888;
+  border-radius: 30px;
+  padding: 20px 0;
+  box-shadow: 0 0 8px #a020f0;
+}
+
+.descricao_ranking_home {
+  padding: 0 30px;
+}
+
+.container_ranking_home h2 {
+  padding: 10px 0;
+}
+
+.container-jogadores-ranking-home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.botao_ranking_home {
+  background-color: transparent;
+  color: var(--text-color);
+  border: solid 2px #ff6a00;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: 0.2s;
+}
+
+.botao_ranking_home:hover {
+  box-shadow: 0 0 12px #ff6a00;
+  color: white;
+}
+
+.section_dois_home{
+  padding-top: 6rem;
+  padding-bottom: 60px;
+}
+
+.container_info_botao_home_torneios{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 4rem;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.container_info_torneio_home{
+  padding-left: 4rem;
+  padding-bottom: 20px;
+}
+
+.container_info_torneio_home h2{
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
+.container_info_torneio_home p{
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}
+
+.container_info_botao_home_torneios button{
+  background-color: transparent;
+  color: var(--text-color);
+  border: solid 2px #ff6a00;
+  border-radius: 15px;
+  font-size: 15px;
+  padding: 15px 30px;
+  transition: 0.2s;
+}
+
+.container_info_botao_home_torneios button:hover {
+  box-shadow: 0 0 12px #ff6a00;
+  color: white;
+}
+
+.container_cards_torneios_home{
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 1025px) {
+  .rankin_home_dois{
+    display: none;
+  }
+  
+}
+
+@media (max-width: 1024px) {
+  main {
+    margin-left: 0;
+    width: 100%;
+    padding-bottom: 100px;
+  }
+
+  header {
+    position: fixed;
+  }
+
+  .section_um_home {
+    padding-top: 0;
+  }
+
+  .container_carrossel_home {
+    width: 100%;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container_infos_carrossel_home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .container_infos_carrossel_home h2 {
+    text-align: center;
+  }
+
+  .container_infos_carrossel_home button {
+    background-color: #ff6a00;
+    color: white;
+  }
+
+  .container_ranking_home{
+    display: none;
+  }
+
+  .rankin_home_dois{
+    display: flex;
+    justify-content: center;
+  }
+
+  .container_ranking_home_dois{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 20px;
+    width: 90%;
+    min-height: 350px;
+    border: 2px solid #888888;
+    border-radius: 30px;
+    padding: 20px 0;
+    box-shadow: 0 0 8px #a020f0;
+  }
+
+  .imagem_fliperama_home {
+    display: none;
+  }
+
+  .section_dois_home {
+    padding-top: 40px;
+  }
+
+  .container_torneios_home  h2{
+    font-size: 2rem;
+    padding-bottom: 10px;
+  }
+  .container_info_torneio_home p {
+    width: 70%;
+    font-size: 1rem;
+    padding-bottom: 10px;
+  }
+
+  .container_info_botao_home_torneios button {
+    padding: 10px 20px;
+    background: #ff6a00;
+    font-size: 14px;
+  }
+
+  .container_cards_torneios_home .container_card_perfil:nth-child(3){
+    display: none;
+  }
+}
+
+@media (max-width:740px) {
+
+  .container_info_botao_home_torneios{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .container_info_torneio_home{
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  .container_info_torneio_home h2{
+    padding-bottom: 0;
+  }
+
+  .container_info_torneio_home p{
+    display: none;
+  }
+
+
+}
+
+@media (max-width:381px) {
+  main{
+    margin-top: 110px;
+  }
+}

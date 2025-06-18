@@ -1,0 +1,118 @@
+.user-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.user-avatar{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-card-pontos{
+    text-align: center;
+    background-color: rgb(114, 111, 111);
+    color: white;
+    padding: 7px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.user-name{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    
+}
+
+.user-points{
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 1024px) {
+  .user-card {
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  .user-avatar {
+    width: 54px;
+    height: 54px;
+    margin-right: 8px;
+  }
+
+  .user-name {
+    font-size: 0.95rem;
+  }
+
+  .user-card-pontos {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .user-points {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .container-img-user-card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .user-avatar {
+    width: 33px;
+    height: 33px;
+    margin-right: 0;
+  }
+
+  .user-name {
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .user-card-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-card-pontos {
+    background-color: rgb(114, 111, 111);
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: white;
+    white-space: nowrap;
+  }
+
+  .user-score {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 374px) {
+    .user-avatar{
+        display: none;
+    }
+}

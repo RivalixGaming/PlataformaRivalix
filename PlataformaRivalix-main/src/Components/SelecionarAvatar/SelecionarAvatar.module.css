@@ -1,0 +1,181 @@
+.avatarModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-color, #120f1f);
+  color: var(--text-color, #e8e5de);
+  border: 2px solid var(--roxo-vivo, #6d00ad);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 0 10px var(--roxo-vivo);
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.avatarModal h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.avatarGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 12px;
+  justify-items: center;
+  margin-bottom: 16px;
+}
+
+.avatarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.avatarItem:hover,
+.selecionado {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px var(--laranja, #ff6a00);
+  background-color: rgba(255, 106, 0, 0.05);
+}
+
+.avatarImage {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+}
+
+.avatarNome {
+  font-size: 0.8rem;
+  color: var(--text-color, #e8e5de);
+  margin-top: 4px;
+}
+
+.uploadOpcao {
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.uploadLabel {
+  cursor: pointer;
+  color: var(--laranja);
+  text-decoration: none;
+  border: 2px solid var(--laranja);
+  box-shadow: 0 0 2px var(--laranja);
+  display: inline-flex;
+  padding: 10px 20px;
+  border-radius: 12px;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease;
+}
+
+.uploadLabel:hover {
+  box-shadow: 0 0 8px var(--laranja);
+}
+
+.btnFechar {
+  margin-top: 16px;
+  width: 80%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--roxo-escuro);
+  color: var(--off-white);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  text-align: left;
+  box-shadow: 0 0 8px var(--roxo-escuro);
+  text-align: center;
+}
+
+.btnFechar:hover {
+  background-color: var(--roxo-vivo);
+  border-color: var(--off-white);
+  box-shadow: 0 0 12px var(--roxo-vivo);
+  cursor: pointer;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .avatarModal {
+    width: 90%;
+    padding: 14px 18px;
+    max-width: 360px;
+  }
+
+  .avatarModal h3 {
+    font-size: 1.1rem;
+  }
+
+  .avatarGrid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+
+  .avatarItem {
+    padding: 6px;
+  }
+
+  .avatarImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarNome {
+    font-size: 0.75rem;
+  }
+
+  .uploadLabel {
+    font-size: 0.8rem;
+    padding: 8px 18px;
+  }
+
+  .btnFechar {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .avatarModal {
+    width: 95%;
+    padding: 12px 16px;
+    max-width: 100%;
+  }
+
+  .avatarGrid {
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+    gap: 8px;
+  }
+
+  .avatarImage {
+    width: 72px;
+    height: 72px;
+  }
+
+  .avatarNome {
+    font-size: 0.7rem;
+  }
+
+  .uploadLabel {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .btnFechar {
+    font-size: 0.75rem;
+    padding: 5px 9px;
+  }
+}

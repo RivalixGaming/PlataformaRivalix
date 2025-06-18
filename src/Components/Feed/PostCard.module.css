@@ -1,0 +1,156 @@
+.card {
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, color 0.3s;
+  background-color: rgba(217, 217, 217, 0.2);
+}
+
+.dark {
+  background-color: rgba(217, 217, 217,0.2);
+  color: #e8e5de;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--text-color);
+  box-shadow: 0 0 8px var(--roxo-vivo);
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.nome {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.verificado {
+  color: #6d00ad;
+  margin-left: 6px;
+}
+
+.menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.imagemPost {
+  width: 100%;
+  border-radius: 10px;
+  margin: 12px 0;
+  object-fit: cover;
+}
+
+.actions button {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.actions button:hover {
+  background-color: rgba(117, 117, 117,0.08);
+}
+
+.dark-mode .actions button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.actions i {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.divisor {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--text-color), transparent);
+  margin: 12px 0;
+  border: none;
+}
+
+.legenda {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1025px) {
+  .card {
+    padding: 0.875rem;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nome {
+    font-size: 0.95rem;
+  }
+
+  .imagemPost {
+    border-radius: 8px;
+  }
+
+  .actions i {
+    font-size: 1.1rem;
+  }
+
+  .legenda {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 0.75rem;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nome {
+    font-size: 0.9rem;
+  }
+
+  .imagemPost {
+    margin: 10px 0;
+    border-radius: 6px;
+  }
+
+  .actions {
+    display: flex;
+    margin-top: 6px;
+  }
+
+  .actions i {
+    font-size: 1rem;
+  }
+
+  .legenda {
+    font-size: 0.85rem;
+  }
+}

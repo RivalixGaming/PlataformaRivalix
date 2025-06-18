@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --laranja: #ff6a00;
+  --preto: #120f1f;
+  --off-white: #e8e5de;
+  --roxo-vivo: #6d00ad;
+  --roxo-escuro: #290e42;
+  --aside-width: 270px;
+  --header-height: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo 2', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header_content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-content {
+  margin-top: 120px;
+  margin-left: 20%;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  z-index: auto;
+}
+
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #E8E5DE;
+    --bg-color: #E8E5DE;
+    --text-color: #000;
+}
+
+header {
+  z-index: 1000;
+}
+
+/*Alterar Tema*/
+
+body {
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #121010;
+    color: #e8e5DE;
+    --bg-color: #121010;
+    --text-color: #e8e5DE;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin: 0;
+    padding: 1.5rem;
+    margin-top: 120px;
+    height: auto;
+    min-height: 100vh;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 740px) {
+  .main-content {
+    margin: 0;
+    margin-top: 120px;
+    z-index: 0;
+    margin-bottom: 110px;
+    z-index: 0;
+  }
+
+}
+
+div[vw-access-button].active {
+  bottom: 80px !important;
+  right: 10px !important;  
+}

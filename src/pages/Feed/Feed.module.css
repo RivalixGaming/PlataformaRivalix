@@ -1,0 +1,17 @@
+.feedContainer {
+  padding: 2rem;
+}
+
+.feedWrapper {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.listaPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
