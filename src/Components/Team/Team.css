@@ -180,6 +180,11 @@
     width: 25px;
     height: 25px;
   }
+
+  .team-photo{
+  object-fit:cover;
+  object-position: top;
+  }
 }
 
 /*Alterar Tema*/

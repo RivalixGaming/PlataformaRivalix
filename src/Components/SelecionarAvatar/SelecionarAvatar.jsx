@@ -3,12 +3,16 @@ import styles from "./SelecionarAvatar.module.css";
 import { useState } from "react";
 import avatar1 from "../../assets/avatars/avatar1.png";
 import avatar2 from "../../assets/avatars/avatar2.png";
-import avatar3 from "../../assets/avatars/avatar3.png";    
+import avatar3 from "../../assets/avatars/avatar3.png"; 
+import avatar4 from "../../assets/avatars/avatar4.png";
+import avatar5 from "../../assets/avatars/avatar5.png";
 
 const avataresPadrao = [
-   { nome: "Hero", src: avatar1 },
+    { nome: "Hero", src: avatar1 },
     { nome: "DogBlue", src: avatar2 },
     { nome: "TheCreator", src: avatar3 },
+    { nome: "Falko", src: avatar4 },
+    { nome: "Capi", src: avatar5 },
 ];
 
 export default function SelecionarAvatar({ onClose }) {

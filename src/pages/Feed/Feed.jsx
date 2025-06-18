@@ -1,14 +1,22 @@
 import PostCard from "../../Components/Feed/PostCard";
 import styles from "./Feed.module.css";
 import NavbarHome from "../../Components/HomeNavBar/NavBarHome.jsx";
-import { useTheme } from '../../contexts/ThemeContext'; // CORRETO AQUI
+import { useTheme } from '../../contexts/ThemeContext'; 
 import bannerExemplo from "../../assets/defaultBanner.png";
 import rivalix from "../../assets/LogoSolo.png";
+import Comercial from "../../assets/Comercial.Rivalix.mp4";
 
 export default function FeedPage() {
-  const { theme } = useTheme(); // pega tema atual
+  const { theme } = useTheme(); 
 
   const posts = [
+    {
+      autor: "RIVALIX",
+      avatar: rivalix,
+      imagem:  Comercial,
+      legenda: "A Rivalidade se transforma em palco. Bem-vindo à Rivalix.",
+      verificado:true
+    },
     {
       autor: "RIVALIX",
       avatar: rivalix,

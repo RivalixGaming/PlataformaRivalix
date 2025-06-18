@@ -1,0 +1,362 @@
+.container {
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.recompensasHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.subtitulo {
+  font-size: 1.125rem;
+  margin: 0;
+  flex: 1;
+}
+
+.line {
+    border: 1px solid var(--roxo-vivo);
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.nivelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+}
+
+.nivelLabel {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #a020f0;
+  margin-bottom: 0.5rem;
+}
+
+.progressBarWrapper {
+  width: 300px;
+  height: 10px;
+  background-color: #D9D9D9;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #a020f0;
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+.pontos {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.desbloqueioTitulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a020f0;
+  margin-bottom: 0.5rem;
+}
+
+.recompensasImg {
+  display: flex;
+  gap: 1rem;
+}
+
+.recompensasImg img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 2px solid #ff6a00;
+  transition: 0.3s;
+}
+
+.recompensasImg img:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 12px #ff6a00;
+}
+
+.btnResgatar {
+  background-color: transparent;
+  border: 2px solid #ff6a00;
+  color: #ff6a00;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.btnResgatar:hover {
+  background-color: #ff6a00;
+  color: black;
+  box-shadow: 0 0 8px #ff6a00;
+}
+
+.missoesTitulo {
+  font-size: 2rem;
+  margin: 0rem 0 1rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--roxo-vivo);
+  padding-bottom: 0.5rem;
+}
+
+.missoesWrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.missoesWrapper h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.dark-mode .missoesWrapper h3 {
+    color: #ccc;
+}
+
+.missoesDiarias,
+.missoesSecundarias {
+  flex: 1;
+  min-width: 280px;
+}
+
+.missaoCard {
+  background-color: transparent;
+  border: 2px solid #ff6a00;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.missaoCard:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px #ff6a00;
+}
+
+.progressMiniWrapper {
+  width: 100%;
+  height: 8px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+.progressMini {
+  height: 100%;
+  background-color: #a020f0;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+.recompensa {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a020f0;
+}
+
+@media (max-width: 1024px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .recompensasHeader {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btnResgatar {
+    padding: 10px 16px;
+  }
+
+  .nivelContainer {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .recompensasImg img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .missoesWrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .missoesDiarias,
+  .missoesSecundarias {
+    flex: 1;
+    min-width: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+    .titulo {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .recompensasHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btnResgatar {
+        align-self: flex-end;
+        width: 100%;
+        text-align: center;
+        margin-top: -15px;
+    }
+
+    .nivelContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nivelLabel{
+        font-size: 1.125rem;
+        text-align: center;
+    }
+
+    .desbloqueioTitulo{
+        font-size: 1.125rem;
+    }
+
+    .progressBarWrapper {
+        width: 100%;
+    }
+
+    .recompensasImg {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .recompensasImg img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .missoesWrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .missoesDiarias,
+    .missoesSecundarias {
+        width: 100%;
+        min-width: 280px;
+        max-width: 400px;
+    }
+
+    .missoesTitulo {
+        font-size: 1.5rem;
+        text-align: start;
+    }
+
+    .missaoCard p {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+
+    .recompensa {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #a020f0;
+        text-align: left;
+    }
+
+    .progressMiniWrapper {
+        width: 100%;
+        background-color: #d9d9d9;
+        height: 8px;
+        border-radius: 5px;
+        margin-top: 4px;
+    }
+
+    .progressMini {
+        background-color: #a020f0;
+        height: 100%;
+        border-radius: 5px;
+        transition: width 0.3s ease;
+    }
+}
+
+@media (max-width: 360px) {
+  .missoesWrapper {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .missoesDiarias,
+  .missoesSecundarias {
+    min-width: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .missaoCard {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .missaoCard p {
+    font-size: 0.9rem;
+  }
+
+  .recompensa {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .recompensasImg img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .btnResgatar {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .progressMiniWrapper {
+    height: 6px;
+  }
+}

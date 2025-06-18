@@ -12,6 +12,7 @@ import Planos from "../pages/Planos/Planos";
 import Notificacoes from "../pages/Notificacao/Notificacoes" 
 import Galeria from "../pages/Galeria/Galeria"
 import ArtesSalvas from  "../pages/Galeria/ArtesSalvas"
+import Recompensas from "../pages/Recompensas/Recompensa"
 // Importando as páginas necessárias para as rotas
 
 export const router = createBrowserRouter([
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
       { path: "/notificacoes", element: <Notificacoes />},
       { path: "/galeria", element: <Galeria />},
       { path: "/artes-salvas", element: <ArtesSalvas />},
+      { path: "/recompensas", element: <Recompensas />},
     ]
   }
 ]);
