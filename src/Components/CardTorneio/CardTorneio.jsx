@@ -5,7 +5,7 @@ export default function CardTorneio() {
     return(
         <div className="container_card_perfil">
             <img src={fotoTorneio} alt="" />
-            <h2>Nome Do Torneio</h2>
+            <h2 className='titulo_torneio_card'>Nome Do Torneio</h2>
             <p>Localização</p>
             <div className="categorias">
                 <p>modalidade</p>
