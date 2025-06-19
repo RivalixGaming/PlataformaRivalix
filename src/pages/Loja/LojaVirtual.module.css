@@ -1,0 +1,256 @@
+.container {
+  padding: 0 2rem;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.subtitulo {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  margin-top: 0.25rem;
+  max-width: 500px;
+}
+
+.iconesHeader {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 5%;
+  align-items: center;
+}
+
+.botaoIcone {
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: var(--roxo-vivo);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botaoIcone:hover {
+  transform: scale(1.1);
+  color: #ff6a00;
+}
+
+.categorias {
+  display: flex;
+  gap: 3rem;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoria:hover .iconeContainer {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px var(--roxo-vivo);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iconeContainer {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color: var(--roxo-vivo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .iconeContainer {
+  background-color: #222;
+}
+
+.categoria svg {
+  font-size: 60px;
+}
+
+.nome {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.divisor {
+  height: 2px;
+  background-color: var(--roxo-vivo);
+  border: none;
+  margin: 1.5rem 0 2rem;
+  opacity: 0.6;
+}
+
+.produtosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.produtoCard {
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 0.75rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  transition: 0.3s ease;
+}
+
+.dark .produtoCard {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.produtoCard:hover {
+    box-shadow: 0 0 12px var(--roxo-vivo);
+    border: 1px solid var(--roxo-vivo);
+    transform: scale(1.05);
+}
+
+.produtoImg {
+  width: 180px;
+  height: 190px;
+  border-radius: 12px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 10px;
+}
+
+.produtoNome {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.produtoPreco {
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.botaoComprar {
+  padding: 10px 20px;
+  border: 2px solid #ff6a00;
+  background: transparent;
+  color: #ff6a00;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoComprar:hover {
+  background-color: #ff6a00;
+  color: black;
+  box-shadow: 0 0 10px #ff6a00;
+}
+
+@media (max-width: 1024px) {
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .iconesHeader {
+    margin-top: 0;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .headerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo {
+    font-size: 0.95rem;
+  }
+
+  .categorias {
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    justify-content: flex-start;
+  }
+
+  .categoria {
+    flex: 0 0 auto;
+  }
+
+  .iconeContainer {
+    width: 80px;
+    height: 80px;
+  }
+
+  .categoria svg {
+    font-size: 40px;
+  }
+
+  .nome {
+    font-size: 0.8rem;
+  }
+
+  .produtosGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .produtoCard {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 180px;
+  }
+
+  .produtoImg {
+    width: 160px;
+    height: 160px;
+  }
+
+  .botaoComprar {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}

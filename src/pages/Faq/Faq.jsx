@@ -38,7 +38,7 @@ export const faqData = [
     perguntas: [
       {
         pergunta: "Esqueci minha senha, e agora?",
-        resposta: "Clique em “Esqueci minha senha” na tela de login ou em 'Alterar Senha' e siga as instruções enviadas por e-mail."
+        resposta: "Clique em “Esqueci minha senha” na tela de login ou em 'Alterar Senha' nas configurações e siga as instruções enviadas por e-mail."
       },
       {
         pergunta: "Como edito meu perfil ou foto?",
@@ -188,7 +188,7 @@ export const faqData = [
 
 export default function FAQ() {
   const [ativo, setAtivo] = useState(null);
-  const { theme } = useTheme(); // light ou dark
+  const { theme } = useTheme();
 
   const togglePergunta = (id) => {
     setAtivo(ativo === id ? null : id);
