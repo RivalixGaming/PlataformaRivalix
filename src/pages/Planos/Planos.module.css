@@ -74,30 +74,43 @@
     font-size: 20px;
 }
 
-
-.preco {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+.cardAtivo {
+    border: 2px solid var(--roxo-vivo);
+    box-shadow: 0 0 12px var(--roxo-vivo);
+    transform: scale(1.03);
 }
 
+.cardAtivo .botaoSelecionar {
+    background: #ff6a00;
+    color: #000;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+.preco {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+
 .botaoSelecionar {
-  margin: 1.5rem auto 0;
-  background: transparent;
-  border: 2px solid #ff6a00;
-  border-radius: 8px;
-  color: #ff6a00;
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: block;
+    margin: 1.5rem auto 0;
+    background: transparent;
+    border: 2px solid #ff6a00;
+    border-radius: 8px;
+    color: #ff6a00;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
 }
 
 .botaoSelecionar:hover {
-  background-color: #ff6a00;
-  color: #000;
-  box-shadow: 0 0 8px #ff6a00;
+    background-color: #ff6a00;
+    color: #000;
+    box-shadow: 0 0 8px #ff6a00;
 }
 
 @media (max-width: 1024px){

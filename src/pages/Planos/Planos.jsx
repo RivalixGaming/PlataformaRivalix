@@ -4,14 +4,8 @@ import ModalPlano from '../../Components/ModalPlano/ModalPlano.jsx';
 import { useState } from 'react';
 
 export default function PlanosTorneio() {
-  const [planoSelecionado, setPlanoSelecionado] = useState(null);
 
-  const handleConfirmar = () => {
-    alert(`Redirecionando para checkout do ${planoSelecionado.titulo}`);
-    setPlanoSelecionado(null); // Fecha o modal
-  };
-
-  const planos = [
+   const planos = [
     {
       idStripe: 'free_plan',
       titulo: 'Plano Casual',
@@ -48,6 +42,16 @@ export default function PlanosTorneio() {
     }
   ];
 
+
+  const [planoAtivo, setPlanoAtivo] = useState(planos[0]);
+  const [planoSelecionado, setPlanoSelecionado] = useState(null);
+
+  const handleConfirmar = () => {
+    setPlanoAtivo(planoSelecionado);
+    setPlanoSelecionado(null);      
+    alert(` ${planoSelecionado.titulo} ativado com sucesso!`);
+  };
+
   // Requisição à API (com backend)
   //const handleSelecionarPlano = async (plano) => {
    
@@ -77,8 +81,14 @@ export default function PlanosTorneio() {
           </p>
 
           <div className={styles.gridPlanos}>
-            {planos.map((plano, index) => (
-              <div className={styles.card} key={index}>
+            {planos.map((plano, index) => {
+            const ativo = plano.idStripe === planoAtivo?.idStripe;
+
+            return (
+              <div
+                className={`${styles.card} ${ativo ? styles.cardAtivo : ''}`}
+                key={index}
+              >
                 <div className={styles.cardConteudo}>
                   <h3>{plano.titulo}</h3>
                   <p className={styles.preco}>{plano.preco}</p>
@@ -90,19 +100,21 @@ export default function PlanosTorneio() {
                     ))}
                   </ul>
                 </div>
+
                 <button
                   className={styles.botaoSelecionar}
-                  onClick={() => setPlanoSelecionado(plano)}
+                  onClick={() => !ativo && setPlanoSelecionado(plano)} 
+                  disabled={ativo}
                 >
-                  Selecionar Plano
+                  {ativo ? 'Plano Atual' : 'Selecionar Plano'}
                 </button>
               </div>
-            ))}
+            );
+          })}
           </div>
         </section>
       </main>
 
-      {/* Modal de confirmação */}
       {planoSelecionado && (
         <ModalPlano
           plano={planoSelecionado}

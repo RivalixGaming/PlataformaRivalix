@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import NavbarHome from '../../Components/HomeNavBar/NavBarHome.jsx';
-import {RiGamepadLine,RiUserLine,RiGiftLine,RiShirtLine,RiTrophyLine,RiFlashlightLine,RiShoppingCartLine,RiFilter3Line} from 'react-icons/ri';
+import {
+  RiGamepadLine,
+  RiUserLine,
+  RiGiftLine,
+  RiShirtLine,
+  RiTrophyLine,
+  RiFlashlightLine,
+  RiShoppingCartLine,
+  RiFilter3Line
+} from 'react-icons/ri';
 import styles from './LojaVirtual.module.css';
 import CarrinhoModal from '../../Components/Loja/CarrinhoModal.jsx';
 import Carregamento from '../../Components/Loja/CompraFinalizada.jsx';
@@ -20,9 +29,9 @@ const categorias = [
 ];
 
 const produtosExemplos = [
-  { id: 1, nome: 'Camiseta Rivalix', preco: 60.00, imagem: camisetaRivalix },
-  { id: 2, nome: 'HeadSeat', preco: 320.00, imagem: fone },
-  { id: 3, nome: 'Mouse Gamer', preco: 200.00, imagem: mouse }
+  { id: 1, nome: 'Camiseta Rivalix', preco: 60.00, imagem: camisetaRivalix, categoria: ['Roupas', 'Kit Rivalix'] },
+  { id: 2, nome: 'HeadSeat', preco: 320.00, imagem: fone, categoria: 'Hardware' },
+  { id: 3, nome: 'Mouse Gamer', preco: 200.00, imagem: mouse, categoria: 'Hardware' }
 ];
 
 export default function Loja() {
@@ -30,6 +39,8 @@ export default function Loja() {
 
   const [carrinho, setCarrinho] = useState([]);
   const [modalAberto, setModalAberto] = useState(false);
+  const [carregamentoVisivel, setCarregamentoVisivel] = useState(false);
+  const [categoriaAtiva, setCategoriaAtiva] = useState('Todos');
 
   const adicionarAoCarrinho = (produto) => {
     setCarrinho([...carrinho, produto]);
@@ -46,10 +57,16 @@ export default function Loja() {
     setModalAberto(false);
     setCarregamentoVisivel(true);
     setTimeout(() => setCarregamentoVisivel(false), 3000);
-  }
+  };
 
-  const [carregamentoVisivel, setCarregamentoVisivel] = useState(false);
-
+  const produtosFiltrados = categoriaAtiva === 'Todos'
+    ? produtosExemplos
+  : produtosExemplos.filter(prod =>
+      Array.isArray(prod.categoria)
+        ? prod.categoria.includes(categoriaAtiva)
+        : prod.categoria === categoriaAtiva
+    );
+    
   return (
     <>
       <NavbarHome />
@@ -76,8 +93,20 @@ export default function Loja() {
           <hr className={styles.divisor} />
 
           <div className={styles.categorias}>
+            <div
+              className={`${styles.categoria} ${categoriaAtiva === 'Todos' ? styles.ativa : ''}`}
+              onClick={() => setCategoriaAtiva('Todos')}
+            >
+              <div className={styles.iconeContainer}>< i class="ri-shopping-cart-fill"></i></div>
+              <span className={styles.nome}>Todos</span>
+            </div>
+
             {categorias.map((item, i) => (
-              <div key={i} className={styles.categoria}>
+              <div
+                key={i}
+                className={`${styles.categoria} ${categoriaAtiva === item.nome ? styles.ativa : ''}`}
+                onClick={() => setCategoriaAtiva(item.nome)}
+              >
                 <div className={styles.iconeContainer}>{item.icone}</div>
                 <span className={styles.nome}>{item.nome}</span>
               </div>
@@ -87,7 +116,7 @@ export default function Loja() {
           <hr className={styles.divisor} />
 
           <div className={styles.produtosGrid}>
-            {produtosExemplos.map((produto) => (
+            {produtosFiltrados.map((produto) => (
               <div key={produto.id} className={styles.produtoCard}>
                 <img src={produto.imagem} alt={produto.nome} className={styles.produtoImg} />
                 <p className={styles.produtoNome}>{produto.nome}</p>
