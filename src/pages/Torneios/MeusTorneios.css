@@ -47,12 +47,11 @@
   transition: 0.2s;
 }
 
-.links_pag_torneios button:hover {
-  border-bottom: 2px solid #ff6a00;
-}
-
-.links_pag_torneios :nth-child(1) {
-  border-bottom: 2px solid #ff6a00;
+.menu_pag_torneios{
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  background: black;
 }
 
 .linha_pag_torneio {

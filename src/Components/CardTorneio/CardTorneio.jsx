@@ -1,24 +1,24 @@
 import './CardTorneio.css'
-import fotoTorneio from "../../assets/torneio2.png"
+// import fotoTorneio from "../../assets/torneio2.png"
 
-export default function CardTorneio() {
+export default function CardTorneio({titulo, foto, localizacao, modalidade, tipo, data, vagaRestante, descricao}) {
     return(
         <div className="container_card_perfil">
-            <img src={fotoTorneio} alt="" />
-            <h2 className='titulo_torneio_card'>Nome Do Torneio</h2>
-            <p>Localização</p>
+            <img src={foto} alt="" />
+            <h2 className='titulo_torneio_card'>{titulo}</h2>
+            <p>{localizacao}</p>
             <div className="categorias">
-                <p>modalidade</p>
-                <p>tipo</p>
-                <p>data</p>
+                <p>{modalidade}</p>
+                <p>{tipo}</p>
+                <p>{data}</p>
             </div>
             <div className='infos_extras'>
-                <p>vagas restantes: 10</p>
+                <p>vagas restantes: {vagaRestante}</p>
                 <div className="barra_de_conclusao">
                     <div className='barra_de_conclusao_interna'>
                     </div>
                 </div>
-                <p>descrição breve do torneio</p>
+                <p>{descricao}</p>
             </div>
         </div>
     )

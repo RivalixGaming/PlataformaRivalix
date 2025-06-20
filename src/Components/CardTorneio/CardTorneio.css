@@ -19,7 +19,7 @@
 .container_card_perfil:hover{
     box-shadow: 0 0 20px #5b36ff;
     border-color:white;
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .container_card_perfil img{
