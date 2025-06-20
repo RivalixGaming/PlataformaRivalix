@@ -1,24 +1,11 @@
 import "./MeusTorneios.css";
-import imgTorneioUm from "../../assets/torneios/torneio1.png";
+import torneio from "../../data/meusTorneios"
 import { Link } from "react-router-dom";
 import NavBarHome from "../../Components/HomeNavBar/NavBarHome";
 import CardTorneio from "../../Components/CardTorneio/CardTorneio";
 
 export default function MeusTorneios() {
-  const torneio = [
-    {
-      id: 1,
-      titulo: "Coliseu",
-      localizacao: "São Paulo",
-      modalidade: "Solo",
-      tipo: "Presencial",
-      data: "09/07/2025",
-      totalVagas: 200,
-      vagasRestantes: 50,
-      descicao: "O torneio para que os melhores provem seu valor",
-      imgTorneio: imgTorneioUm,
-    }
-  ];
+
 
   return (
     <>
@@ -30,9 +17,11 @@ export default function MeusTorneios() {
             <p>Movimente ainda mais a comunidade através de torneios</p>
           </div>
           <div>
-            <button>
-              <span>+</span> Crie Torneios
-            </button>
+            <Link to="/criacao-torneio">
+                <button>
+                <span>+</span> Crie Torneios
+                </button>
+            </Link>
           </div>
         </div>
         <div>
@@ -64,6 +53,7 @@ export default function MeusTorneios() {
                   tipo={torneio.tipo}
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
+                  vagaTotal={torneio.totalVagas}
                   descricao={torneio.descicao}
                 />
               ))}

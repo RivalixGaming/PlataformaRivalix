@@ -1,7 +1,10 @@
 import './CardTorneio.css'
 // import fotoTorneio from "../../assets/torneio2.png"
 
-export default function CardTorneio({titulo, foto, localizacao, modalidade, tipo, data, vagaRestante, descricao}) {
+export default function CardTorneio({titulo, foto, localizacao, modalidade, tipo, data, vagaRestante, vagaTotal, descricao}){
+
+    const porcent = (vagaTotal - vagaRestante) / vagaTotal * 100
+
     return(
         <div className="container_card_perfil">
             <img src={foto} alt="" />
@@ -15,7 +18,7 @@ export default function CardTorneio({titulo, foto, localizacao, modalidade, tipo
             <div className='infos_extras'>
                 <p>vagas restantes: {vagaRestante}</p>
                 <div className="barra_de_conclusao">
-                    <div className='barra_de_conclusao_interna'>
+                    <div style={{width: `${porcent}%`}} className='barra_de_conclusao_interna'>
                     </div>
                 </div>
                 <p>{descricao}</p>

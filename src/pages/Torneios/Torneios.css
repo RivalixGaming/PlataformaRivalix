@@ -76,3 +76,7 @@
     flex-wrap: wrap;
     padding-top: 30px;
 }
+
+.container_torneios_pag_torneio > * {
+  margin-bottom: 3rem;
+}

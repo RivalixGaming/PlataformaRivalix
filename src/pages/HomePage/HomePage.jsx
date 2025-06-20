@@ -2,51 +2,12 @@ import CardTorneio from "../../Components/CardTorneio/CardTorneio";
 import UserRanking from "../../Components/UserRanking/UserRanking";
 import NavBar from "../../Components/HomeNavBar/NavBarHome.jsx";
 import fotoFliperama from "../../assets/fliperama.png";
+import torneio from "../../data/torneios.js"
 import "./HomePage.css";
 
-import imgTorneioUm from "../../assets/torneios/torneio1.png"
-import imgTorneioDois from "../../assets/torneios/torneio2.png"
-import imgTorneioTres from "../../assets/torneios/MK1.avif"
+import { Link } from "react-router-dom";
 
 export default function Home() {
-  const torneio = [
-    {
-      id: 1,
-      titulo: "Coliseu",
-      localizacao: "São Paulo",
-      modalidade: "Solo",
-      tipo: "Presencial",
-      data: "09/07/2025",
-      totalVagas: 200,
-      vagasRestantes: 50,
-      descicao: "O torneio para que os melhores provem seu valor",
-      imgTorneio: imgTorneioUm,
-    },
-    {
-      id: 2,
-      titulo: "Torneio de Titãs",
-      localizacao: "São Paulo",
-      modalidade: "Dupla",
-      tipo: "Online",
-      data: "12/09/2025",
-      totalVagas: 200,
-      vagasRestantes: 33,
-      descicao: "Torneio em dupla",
-      imgTorneio: imgTorneioDois,
-    },
-    {
-      id: 3,
-      titulo: "MK1",
-      localizacao: "São Paulo",
-      modalidade: "Solo",
-      tipo: "Online",
-      data: "04/08/2025",
-      totalVagas: 200,
-      vagasRestantes: 43,
-      descicao: "Torneio para os amantes de Mortal Kombat",
-      imgTorneio: imgTorneioTres,
-    },
-  ];
 
   return (
     <>
@@ -73,7 +34,9 @@ export default function Home() {
               <UserRanking />
               <UserRanking />
             </div>
-            <button className="botao_ranking_home">Mostrar Mais</button>
+            <Link to='/ranking'>
+              <button className="botao_ranking_home">Mostrar Mais</button>
+            </Link>
           </div>
         </section>
         <section className="section_dois_home">
@@ -83,10 +46,12 @@ export default function Home() {
                 <h2>Torneios</h2>
                 <p>Participe dos torneios e mostre que você é o melhor!</p>
               </div>
-              <button>Criar Torneio</button>
+              <Link to="/criacao-torneio">
+                <button>Criar Torneio</button>
+              </Link>
             </div>
             <div className="container_cards_torneios_home">
-              {torneio.map((torneio) => (
+              {torneio.slice(0, 3).map((torneio) => (
                 <CardTorneio
                   key={torneio.id}
                   titulo={torneio.titulo}
@@ -96,6 +61,7 @@ export default function Home() {
                   tipo={torneio.tipo}
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
+                  vagaTotal = {torneio.totalVagas}
                   descricao={torneio.descicao}
                 />
               ))}
@@ -111,7 +77,9 @@ export default function Home() {
                 <UserRanking />
                 <UserRanking />
               </div>
+            <Link to='/ranking'>
               <button className="botao_ranking_home">Mostrar Mais</button>
+            </Link>
             </div>
           </div>
         </section>

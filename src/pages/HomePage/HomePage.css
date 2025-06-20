@@ -87,7 +87,7 @@
 
 .botao_ranking_home:hover {
   box-shadow: 0 0 12px #ff6a00;
-  color: white;
+  color: #ff6a00;
 }
 
 .section_dois_home{
@@ -130,7 +130,7 @@
 
 .container_info_botao_home_torneios button:hover {
   box-shadow: 0 0 12px #ff6a00;
-  color: white;
+  color: #ff6a00;
 }
 
 .container_cards_torneios_home{
