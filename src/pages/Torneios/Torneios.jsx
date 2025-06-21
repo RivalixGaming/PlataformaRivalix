@@ -45,8 +45,10 @@ export default function Torenios() {
             <h2>Populares</h2>
             <div className="container_torneios_pag_torneio">
               {torneio.map((torneio) => (
+                
                 <CardTorneio
                   key={torneio.id}
+                  id = {torneio.id}
                   titulo={torneio.titulo}
                   foto={torneio.imgTorneio}
                   localizacao={torneio.localizacao}

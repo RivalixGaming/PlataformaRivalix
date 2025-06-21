@@ -54,6 +54,7 @@ export default function Home() {
               {torneio.slice(0, 3).map((torneio) => (
                 <CardTorneio
                   key={torneio.id}
+                  id = {torneio.id}
                   titulo={torneio.titulo}
                   foto={torneio.imgTorneio}
                   localizacao={torneio.localizacao}
@@ -61,7 +62,7 @@ export default function Home() {
                   tipo={torneio.tipo}
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
-                  vagaTotal = {torneio.totalVagas}
+                  vagaTotal={torneio.totalVagas}
                   descricao={torneio.descicao}
                 />
               ))}

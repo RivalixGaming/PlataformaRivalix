@@ -1,0 +1,74 @@
+
+
+.imagem_torneio_detalhes{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.container_botao_data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.container_botao_data .container_data{
+    font-size: 20px;
+}
+
+.container_botao_data .container_data h4{
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.container_botao_data .container_botoes_torneio {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.container_botao_data .container_botoes_torneio button{
+    padding: 10px 10px;
+    background: transparent;
+    font-size: 20px;
+    color: #ff6a00;
+    border: 2px solid #ff6a00;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.container_botao_data .container_botoes_torneio button:hover{
+    box-shadow: 0 0 10px #ff6a00;
+}
+
+.container_botao_data .container_botoes_torneio a{
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.container_botoes_links{
+    padding: 20px 0;
+}
+
+.container_botoes_links button{
+    padding: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.container_botoes_links .ativo{
+    border-bottom: 2px solid #ff6a00;
+}
+
+.linha_separacao{
+    width: 100%;
+    height: 2px;
+    background-color: blueviolet;
+    margin-bottom: 30px;
+}
+

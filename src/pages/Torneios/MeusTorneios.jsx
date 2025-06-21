@@ -46,6 +46,7 @@ export default function MeusTorneios() {
               {torneio.map((torneio) => (
                 <CardTorneio
                   key={torneio.id}
+                  id = {torneio.id}
                   titulo={torneio.titulo}
                   foto={torneio.imgTorneio}
                   localizacao={torneio.localizacao}

@@ -18,6 +18,7 @@ import Torenios from "../pages/Torneios/Torneios";
 import MeusTorneios from "../pages/Torneios/MeusTorneios.jsx";
 import Loja from "../pages/Loja/Loja.jsx";
 import CriacaoTorneio from "../pages/CriacaoTorneio/CriacaoTorneio.jsx";
+import DetalhesTorneio from '../pages/DetalhesTorneio/DetalhesTorneio.jsx'
 // Importando as páginas necessárias para as rotas
 
 export const router = createBrowserRouter([
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
       { path: "/torneios", element: <Torenios />},
       { path: "/meus-torneios", element: <MeusTorneios/>},
       { path: "/criacao-torneio", element: <CriacaoTorneio/>},
+      { path: "/torneios/:id", element: <DetalhesTorneio/>},
       { path: "/loja", element: <Loja />},
     ]
   }
