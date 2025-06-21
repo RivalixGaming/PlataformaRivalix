@@ -13,7 +13,7 @@ const torneio = [
     data: "09/07/2025",
     totalVagas: 200,
     vagasRestantes: 50,
-    descicao: "O torneio para que os melhores provem seu valor",
+    descricao: "O torneio para que os melhores provem seu valor",
     imgTorneio: imgTorneioUm,
   },
   {
@@ -25,7 +25,7 @@ const torneio = [
     data: "12/09/2025",
     totalVagas: 200,
     vagasRestantes: 33,
-    descicao: "Torneio em dupla",
+    descricao: "Torneio em dupla",
     imgTorneio: imgTorneioDois,
   },
   {
@@ -37,7 +37,7 @@ const torneio = [
     data: "04/08/2025",
     totalVagas: 200,
     vagasRestantes: 43,
-    descicao: "Torneio para os amantes de Mortal Kombat",
+    descricao: "Torneio para os amantes de Mortal Kombat",
     imgTorneio: imgTorneioTres,
   },
   {
@@ -49,7 +49,7 @@ const torneio = [
     data: "20/07/2025",
     totalVagas: 100,
     vagasRestantes: 20,
-    descicao: "Apenas os mais fortes em equipe vencerão",
+    descricao: "Apenas os mais fortes em equipe vencerão",
     imgTorneio: imgTorneioDois,
   },
   {
@@ -61,7 +61,7 @@ const torneio = [
     data: "02/10/2025",
     totalVagas: 150,
     vagasRestantes: 75,
-    descicao: "Competição online com transmissão ao vivo",
+    descricao: "Competição online com transmissão ao vivo",
     imgTorneio: imgTorneioTres,
   },
   {
@@ -73,7 +73,7 @@ const torneio = [
     data: "15/08/2025",
     totalVagas: 120,
     vagasRestantes: 60,
-    descicao: "Torneio com premiação para as melhores duplas",
+    descricao: "Torneio com premiação para as melhores duplas",
     imgTorneio: imgTorneioUm,
   },
   {
@@ -85,7 +85,7 @@ const torneio = [
     data: "05/09/2025",
     totalVagas: 180,
     vagasRestantes: 90,
-    descicao: "Lute por pontos e suba no ranking!",
+    descricao: "Lute por pontos e suba no ranking!",
     imgTorneio: imgTorneioTres,
   },
   {
@@ -97,7 +97,7 @@ const torneio = [
     data: "28/09/2025",
     totalVagas: 100,
     vagasRestantes: 10,
-    descicao: "Torneio de encerramento do ano com as melhores equipes",
+    descricao: "Torneio de encerramento do ano com as melhores equipes",
     imgTorneio: imgTorneioDois,
   },
 ];

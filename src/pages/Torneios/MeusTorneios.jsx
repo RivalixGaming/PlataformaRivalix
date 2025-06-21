@@ -1,11 +1,18 @@
 import "./MeusTorneios.css";
-import torneio from "../../data/meusTorneios"
+import torneioMock from "../../data/meusTorneios";
 import { Link } from "react-router-dom";
 import NavBarHome from "../../Components/HomeNavBar/NavBarHome";
 import CardTorneio from "../../Components/CardTorneio/CardTorneio";
+import ModalCriarTorneio from "../../Components/Torneio/ModalCriarTorneio";
+import { useState } from "react";
 
 export default function MeusTorneios() {
+  const [modalAberto, setModalAberto] = useState(false);
+  const [meusTorneios, setMeusTorneios] = useState(torneioMock);
 
+  const adicionarTorneio = (novo) => {
+    setMeusTorneios((prev) => [...prev, { ...novo, id: Date.now() }]);
+  };
 
   return (
     <>
@@ -17,36 +24,38 @@ export default function MeusTorneios() {
             <p>Movimente ainda mais a comunidade através de torneios</p>
           </div>
           <div>
-            <Link to="/criacao-torneio">
-                <button>
-                <span>+</span> Crie Torneios
-                </button>
-            </Link>
+            <button onClick={() => setModalAberto(true)}>
+              <span>+</span> Crie Torneios
+            </button>
           </div>
         </div>
+
         <div>
           <div className="rotas_pag_torneios">
             <div className="links_pag_torneios">
-                <Link to="/torneios">
-                    <button className="botao_torneio_explorar">Explorar</button>
-                </Link>
-                <button className="botao_torneio_meus_torneios"
-                style={{borderBottom:"2px solid #ff6a00"}}> Meus Torneios</button>
+              <Link to="/torneios">
+                <button className="botao_torneio_explorar">Explorar</button>
+              </Link>
+              <button className="botao_torneio_meus_torneios">
+                Meus Torneios
+              </button>
             </div>
             <div>
-              <button href="#">
-                <i class="ri-filter-3-line"></i> Filtros
+              <button>
+                <i className="ri-filter-3-line"></i> Filtros
               </button>
             </div>
           </div>
+
           <div className="linha_pag_torneio"></div>
+
           <div className="container_cards_pag_torneio">
             <h2>Meus Torneios</h2>
             <div className="container_torneios_pag_torneio">
-              {torneio.map((torneio) => (
+              {meusTorneios.map((torneio) => (
                 <CardTorneio
                   key={torneio.id}
-                  id = {torneio.id}
+                  id={torneio.id}
                   titulo={torneio.titulo}
                   foto={torneio.imgTorneio}
                   localizacao={torneio.localizacao}
@@ -55,13 +64,19 @@ export default function MeusTorneios() {
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
                   vagaTotal={torneio.totalVagas}
-                  descricao={torneio.descicao}
+                  descricao={torneio.descricao}
                 />
               ))}
             </div>
           </div>
         </div>
       </main>
+
+      <ModalCriarTorneio
+        aberto={modalAberto}
+        fechar={() => setModalAberto(false)}
+        salvarTorneio={adicionarTorneio}
+      />
     </>
   );
 }

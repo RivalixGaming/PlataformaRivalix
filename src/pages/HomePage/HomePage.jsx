@@ -4,10 +4,14 @@ import NavBar from "../../Components/HomeNavBar/NavBarHome.jsx";
 import fotoFliperama from "../../assets/fliperama.png";
 import torneio from "../../data/torneios.js"
 import "./HomePage.css";
+import ModalCriarTorneio from "../../Components/Torneio/ModalCriarTorneio";
+import { useState } from "react";
+
 
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [modalAberto, setModalAberto] = useState(false); 
 
   return (
     <>
@@ -46,9 +50,9 @@ export default function Home() {
                 <h2>Torneios</h2>
                 <p>Participe dos torneios e mostre que você é o melhor!</p>
               </div>
-              <Link to="/criacao-torneio">
-                <button>Criar Torneio</button>
-              </Link>
+              <button onClick={() => setModalAberto(true)}>
+                <span>+</span> Crie Torneios
+              </button>
             </div>
             <div className="container_cards_torneios_home">
               {torneio.slice(0, 3).map((torneio) => (
@@ -85,6 +89,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <ModalCriarTorneio aberto={modalAberto} fechar={() => setModalAberto(false)} />
     </>
   );
 }

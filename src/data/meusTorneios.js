@@ -1,4 +1,4 @@
-import imgTorneioDois from "../assets/torneios/torneio2.png";
+ import imgTorneioDois from "../assets/torneios/torneio2.png";
 
 const meusTorneios = [
   {
@@ -10,10 +10,9 @@ const meusTorneios = [
     data: "12/09/2025",
     totalVagas: 200,
     vagasRestantes: 33,
-    descicao: "Torneio em dupla",
+    descricao: "Torneio em dupla",
     imgTorneio: imgTorneioDois,
   }
 ]
 
-export default meusTorneios;
 
