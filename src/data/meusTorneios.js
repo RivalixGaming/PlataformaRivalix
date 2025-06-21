@@ -15,4 +15,4 @@ const meusTorneios = [
   }
 ]
 
-
+export default meusTorneios;
