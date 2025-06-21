@@ -4,15 +4,36 @@ import NavBarHome from "../../Components/HomeNavBar/NavBarHome";
 import CardTorneio from "../../Components/CardTorneio/CardTorneio";
 import torneioInicial from "../../data/torneios";
 import ModalCriarTorneio from '../../Components/Torneio/ModalCriarTorneio';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Torenios() {
+export default function Torneios() {
   const [modalAberto, setModalAberto] = useState(false);
-  const [torneios, setTorneios] = useState(torneioInicial);
 
+  // Carrega torneios da lista geral ou do localStorage
+  const [torneios, setTorneios] = useState(() => {
+    const local = localStorage.getItem("torneiosRivalix");
+    return local ? JSON.parse(local) : torneioInicial;
+  });
+
+  // salva no localStorage
+  useEffect(() => {
+    localStorage.setItem("torneiosRivalix", JSON.stringify(torneios));
+  }, [torneios]);
+
+  // Salva o torneio tanto nos torneios gerais quanto em "meus torneios"
   const salvarTorneio = (novoTorneio) => {
+    // Atualiza torneios públicos (explorar)
     setTorneios([...torneios, novoTorneio]);
+
+    // Também salva nos meus torneios
+    const meusTorneiosLocal = localStorage.getItem("meusTorneiosRivalix");
+    const meusTorneiosAtualizados = meusTorneiosLocal
+      ? [...JSON.parse(meusTorneiosLocal), novoTorneio]
+      : [novoTorneio];
+
+    localStorage.setItem("meusTorneiosRivalix", JSON.stringify(meusTorneiosAtualizados));
   };
+
 
   return (
     <>

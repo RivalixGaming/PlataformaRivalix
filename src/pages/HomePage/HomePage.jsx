@@ -11,7 +11,24 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const [modalAberto, setModalAberto] = useState(false); 
+  const [modalAberto, setModalAberto] = useState(false);
+
+  const [torneios, setTorneios] = useState(() => {
+  const local = localStorage.getItem("torneiosRivalix");
+  return local ? JSON.parse(local) : torneio;
+});
+
+  const salvarTorneio = (novoTorneio) => {
+    const atualizados = [...torneios, novoTorneio];
+    setTorneios(atualizados);
+    localStorage.setItem("torneiosRivalix", JSON.stringify(atualizados));
+
+    const meusLocal = localStorage.getItem("meusTorneiosRivalix");
+    const meusAtualizados = meusLocal
+      ? [...JSON.parse(meusLocal), novoTorneio]
+      : [novoTorneio];
+    localStorage.setItem("meusTorneiosRivalix", JSON.stringify(meusAtualizados));
+  };
 
   return (
     <>
@@ -90,7 +107,12 @@ export default function Home() {
         </section>
       </main>
 
-      <ModalCriarTorneio aberto={modalAberto} fechar={() => setModalAberto(false)} />
+      <ModalCriarTorneio 
+        aberto={modalAberto} 
+        fechar={() => setModalAberto(false)} 
+        salvarTorneio={salvarTorneio}
+      />
+
     </>
   );
 }
