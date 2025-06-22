@@ -61,8 +61,8 @@ export default function Torneios() {
                 <button className="botao_torneio_meus_torneios">Meus Torneios</button>
               </Link>
             </div>
-            <div>
-              <button>
+            <div className="filtro_torneios">
+              <button >
                 <i className="ri-filter-3-line"></i> Filtros
               </button>
             </div>

@@ -72,3 +72,21 @@
     margin-bottom: 30px;
 }
 
+@media (max-width:740px) {
+    .imagem_torneio_detalhes{
+        height: 300px;
+    }
+
+    .container_botao_data{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_data{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+}
+
+
+

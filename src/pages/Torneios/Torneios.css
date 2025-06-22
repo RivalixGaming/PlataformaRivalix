@@ -80,3 +80,17 @@
 .container_torneios_pag_torneio > * {
   margin-bottom: 3rem;
 }
+
+@media (max-width:740px) {
+  .container_descubra_torneios{
+    text-align: center;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .rotas_pag_torneios{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}

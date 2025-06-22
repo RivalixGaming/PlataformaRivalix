@@ -75,10 +75,10 @@ export default function DetalhesTorneio() {
         <div className={style.linha_separacao}></div>
 
         <div>
-          {abaAtiva === "VisaoGeral" && <VisaoGeral />}
-          {abaAtiva === "Chave" && <Chave />}
-          {abaAtiva === "Participantes" && <Participantes />}
-          {abaAtiva === "Partida" && <Partida />}
+          {abaAtiva === "VisaoGeral" && <VisaoGeral torneio={torneio.id}/>}
+          {abaAtiva === "Chave" && <Chave torneio={torneio.id} />}
+          {abaAtiva === "Participantes" && <Participantes  torneio={torneio.id} />}
+          {abaAtiva === "Partida" && <Partida torneio={torneio.id} />}
         </div>
       </main>
     </>

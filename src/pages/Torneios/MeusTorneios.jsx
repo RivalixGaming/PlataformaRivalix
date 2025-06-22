@@ -46,11 +46,12 @@ export default function MeusTorneios() {
               <Link to="/torneios">
                 <button className="botao_torneio_explorar">Explorar</button>
               </Link>
-              <button className="botao_torneio_meus_torneios">
+              <button className="botao_torneio_meus_torneios"
+              style={{ borderBottom: "2px solid #ff6a00" }}>
                 Meus Torneios
               </button>
             </div>
-            <div>
+            <div className="filtro_torneios">
               <button>
                 <i className="ri-filter-3-line"></i> Filtros
               </button>

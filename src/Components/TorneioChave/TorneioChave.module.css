@@ -1,0 +1,14 @@
+.container_chaves {
+  height: 750px;
+}
+
+.container_chaves h2{
+    padding-bottom: 40px;
+}
+
+.container_bracket {
+  width: 100%;
+  height: 680px;
+  background-color: rgb(126, 126, 126);
+  border-radius: 30px;
+}
