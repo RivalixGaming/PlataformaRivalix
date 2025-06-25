@@ -12,7 +12,7 @@ export default function CardTorneio({
   data,
   vagaRestante,
   vagaTotal,
-  descricao,
+  jogo,
 }) {
 
   const total = vagaTotal || 1;
@@ -47,7 +47,7 @@ export default function CardTorneio({
             className="barra_de_conclusao_interna"
           ></div>
         </div>
-        <p className="descricao_torneio_card">{descricao}</p>
+        <p className="descricao_torneio_card">{jogo}</p>
       </div>
     </Link>
   );

@@ -2,11 +2,10 @@ import CardTorneio from "../../Components/CardTorneio/CardTorneio";
 import UserRanking from "../../Components/UserRanking/UserRanking";
 import NavBar from "../../Components/HomeNavBar/NavBarHome.jsx";
 import fotoFliperama from "../../assets/fliperama.png";
-import torneio from "../../data/torneios.js"
+import torneio from "../../data/torneios.js";
 import "./HomePage.css";
 import ModalCriarTorneio from "../../Components/Torneio/ModalCriarTorneio";
 import { useState } from "react";
-
 
 import { Link } from "react-router-dom";
 
@@ -14,9 +13,9 @@ export default function Home() {
   const [modalAberto, setModalAberto] = useState(false);
 
   const [torneios, setTorneios] = useState(() => {
-  const local = localStorage.getItem("torneiosRivalix");
-  return local ? JSON.parse(local) : torneio;
-});
+    const local = localStorage.getItem("torneiosRivalix");
+    return local ? JSON.parse(local) : torneio;
+  });
 
   const salvarTorneio = (novoTorneio) => {
     const atualizados = [...torneios, novoTorneio];
@@ -27,7 +26,10 @@ export default function Home() {
     const meusAtualizados = meusLocal
       ? [...JSON.parse(meusLocal), novoTorneio]
       : [novoTorneio];
-    localStorage.setItem("meusTorneiosRivalix", JSON.stringify(meusAtualizados));
+    localStorage.setItem(
+      "meusTorneiosRivalix",
+      JSON.stringify(meusAtualizados)
+    );
   };
 
   return (
@@ -55,7 +57,7 @@ export default function Home() {
               <UserRanking />
               <UserRanking />
             </div>
-            <Link to='/ranking'>
+            <Link to="/ranking">
               <button className="botao_ranking_home">Mostrar Mais</button>
             </Link>
           </div>
@@ -75,7 +77,7 @@ export default function Home() {
               {torneio.slice(0, 3).map((torneio) => (
                 <CardTorneio
                   key={torneio.id}
-                  id = {torneio.id}
+                  id={torneio.id}
                   titulo={torneio.titulo}
                   foto={torneio.imgTorneio}
                   localizacao={torneio.localizacao}
@@ -84,7 +86,7 @@ export default function Home() {
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
                   vagaTotal={torneio.totalVagas}
-                  descricao={torneio.descicao}
+                  jogo={torneio.jogo}
                 />
               ))}
             </div>
@@ -99,20 +101,19 @@ export default function Home() {
                 <UserRanking />
                 <UserRanking />
               </div>
-            <Link to='/ranking'>
-              <button className="botao_ranking_home">Mostrar Mais</button>
-            </Link>
+              <Link to="/ranking">
+                <button className="botao_ranking_home">Mostrar Mais</button>
+              </Link>
             </div>
           </div>
         </section>
       </main>
 
-      <ModalCriarTorneio 
-        aberto={modalAberto} 
-        fechar={() => setModalAberto(false)} 
+      <ModalCriarTorneio
+        aberto={modalAberto}
+        fechar={() => setModalAberto(false)}
         salvarTorneio={salvarTorneio}
       />
-
     </>
   );
 }

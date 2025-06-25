@@ -76,7 +76,7 @@ export default function MeusTorneios() {
                     data={torneio.data}
                     vagaRestante={torneio.vagasRestantes}
                     vagaTotal={torneio.totalVagas}
-                    descricao={torneio.descricao}
+                    jogo={torneio.jogo}
                   />
                 ))
               ) : (

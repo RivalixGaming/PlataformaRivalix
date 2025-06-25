@@ -85,7 +85,7 @@ export default function Torneios() {
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
                   vagaTotal={torneio.totalVagas}
-                  descricao={torneio.descricao}
+                  jogo={torneio.jogo}
                 />
               ))}
             </div>
