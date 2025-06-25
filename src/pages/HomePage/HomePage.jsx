@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const [modalAberto, setModalAberto] = useState(false);
-
   const [torneios, setTorneios] = useState(() => {
   const local = localStorage.getItem("torneiosRivalix");
   return local ? JSON.parse(local) : torneio;
@@ -84,7 +83,7 @@ export default function Home() {
                   data={torneio.data}
                   vagaRestante={torneio.vagasRestantes}
                   vagaTotal={torneio.totalVagas}
-                  descricao={torneio.descicao}
+                  jogo={torneio.jogo}
                 />
               ))}
             </div>

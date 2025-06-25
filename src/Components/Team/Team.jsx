@@ -14,21 +14,21 @@ import pedroH from '../../assets/pedroH.png'
 const teamMembers = [
   {
     name: "Luan Souza",
-    role: "P.O e Desenvolvedor Backend",
+    role: "P.O e Desenvolvedor Banco de Dados",
     linkedin: "https://www.linkedin.com/in/luanscruz/",
     github: "https://github.com/LuanSouzza",
     photo: luan
   },
   {
     name: "Vitor Barbosa",
-    role: "Scrum Master e Desenvolvedor Full-Stack",
+    role: "Scrum Master e Desenvolvedor Back-End",
     linkedin: "https://www.linkedin.com/in/vitor-silva-dev/",
     github: "https://github.com/VitorBSilvaDev",
     photo: vitor
   },
   {
     name: "Pedro Santana",
-    role: "Financeiro e Desenvolvedor Backend",
+    role: "Financeiro e Desenvolvedor Full-Stack",
     linkedin: "https://www.linkedin.com/in/pedro-santan4/",
     github: "https://github.com/PedroPereiraSantana",
     photo: pedroS

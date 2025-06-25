@@ -134,8 +134,10 @@
 }
 
 .container_cards_torneios_home{
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  padding: 0.5rem;
 }
 
 @media (min-width: 1025px) {

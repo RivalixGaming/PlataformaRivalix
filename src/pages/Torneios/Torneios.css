@@ -71,10 +71,10 @@
 }
 
 .container_torneios_pag_torneio{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    padding: 0.5rem;
 }
 
 .container_torneios_pag_torneio > * {

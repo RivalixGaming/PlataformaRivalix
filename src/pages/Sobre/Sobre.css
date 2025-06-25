@@ -224,6 +224,71 @@
   }
 }
 
+@media (max-width: 375px) {
+
+  .about-page__intro {
+    margin-top: 40px;   
+    gap: 0.75rem;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-page__title {
+    font-size: 1.8rem;  
+    line-height: 1.1;
+  }
+
+  .about-page__description {
+    font-size: 0.9rem;    
+    max-width: 100%;
+    line-height: 1.35;
+  }
+
+  .about-page__slogan-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 2.2rem;
+    width: 95%;
+    padding: 0 3%;
+  }
+
+  .about-page__slogan {
+    font-size: 1.6rem;      /* antes 2 rem */
+    line-height: 1.25;
+  }
+
+  /* Linha divisória mais fina para não “pesar” */
+  .about-page__line,
+  .about-page__divider--mobile {
+    width: 88%;
+    box-shadow: 0 0 10px 3px #ffffffb3;
+  }
+
+  /* Seção de equipe alinhada e compacta */
+  .about-page__team {
+    gap: 32px;
+    padding: 0 4%;
+  }
+
+  .about-page__team-container {
+    gap: 20px;
+  }
+
+  .about-page__team-image {
+    width: 100%;
+    max-height: 280px;      /* evita “esticão” vertical */
+    border-radius: 18px;
+  }
+
+  .about-page__team-text {
+    font-size: 1.2rem;      /* antes 1.4 rem */
+    width: 100%;
+    margin-left: 0;         /* centralizado */
+    text-align: center;
+  }
+}
+
 /*Alterar Tema*/
 
 .dark-mode .about-page__intro {
