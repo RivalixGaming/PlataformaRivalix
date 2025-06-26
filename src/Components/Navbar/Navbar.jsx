@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './Navbar.css';
 import logoClaro from '../../assets/logoClaro.png';
-import logoDark from "/src/assets/logoDark.png";
+import logoDark from "../../src/assets/logoDark.png";
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Link } from 'react-router-dom';

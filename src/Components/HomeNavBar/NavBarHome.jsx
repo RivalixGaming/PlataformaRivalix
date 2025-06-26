@@ -1,6 +1,6 @@
 import "./style.css";
 import logoClaro from '../../assets/logoClaro.png';
-import logoDark from "/src/assets/logoDark.png";
+import logoDark from "../../src/assets/logoDark.png";
 import iconUser from '/src/assets/icon-teste-2.png';
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
