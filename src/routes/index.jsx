@@ -14,7 +14,7 @@ import Galeria from "../pages/Galeria/Galeria";
 import ArtesSalvas from  "../pages/Galeria/ArtesSalvas";
 import Recompensas from "../pages/Recompensas/Recompensa";
 import Faq from "../pages/Faq/Faq";
-import Torneios from "../pages/Torneios/Torneios";
+import Torenios from "../pages/Torneios/Torneios";
 import MeusTorneios from "../pages/Torneios/MeusTorneios.jsx";
 import Loja from "../pages/Loja/Loja.jsx";
 import DetalhesTorneio from '../pages/DetalhesTorneio/DetalhesTorneio.jsx'
@@ -39,12 +39,11 @@ export const router = createBrowserRouter([
       { path: "/artes-salvas", element: <ArtesSalvas />},
       { path: "/recompensas", element: <Recompensas />},
       { path: "/faq", element: <Faq />},
-      { path: "/torneios", element: <Torneios />},
+      { path: "/torneios", element: <Torenios />},
       { path: "/meus-torneios", element: <MeusTorneios/>},
       { path: "/torneios/:id", element: <DetalhesTorneio/>},
       { path: "/loja", element: <Loja />},
     ]
   }
-],
-{basename:"PlaformaRivalix",}
+]
 );

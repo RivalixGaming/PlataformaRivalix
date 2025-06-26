@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rivalixgaming.github.io/PlataformaRivalix",
+  "homepage": "https://github.com/RivalixGaming/PlataformaRivalix",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
