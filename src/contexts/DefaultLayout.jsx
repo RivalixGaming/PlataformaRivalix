@@ -1,4 +1,4 @@
-import ScrollToTop from "../components/ScrollToTop/ScrollToTop.jsx";
+import ScrollToTop from "../Components/ScrollToTop/ScrollToTop.jsx";
 import { Outlet } from "react-router-dom";
 
 export default function DefaultLayout() {
