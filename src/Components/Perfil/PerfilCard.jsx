@@ -1,5 +1,5 @@
 import styles from "./PerfilCard.module.css";
-import iconTeste from '/src/assets/icon-teste-2.png';
+import iconTeste from "/src/assets/icon-teste-2.png";
 import { useProfile } from "../../contexts/ProfileContext";
 
 export default function PerfilCard({ nome, isOwner }) {
