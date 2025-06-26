@@ -1,0 +1,119 @@
+.container_card_perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                  
+  flex: 1 1 260px;            
+  max-width: 280px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  color: #e3e3e3;                                  
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container_card_perfil:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 22px blueviolet;
+  border-color: blueviolet;
+}
+
+.imagem_torneio_card {
+    width: 100%;
+    aspect-ratio: 16 / 16;       
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;         
+}
+
+.titulo_torneio_card {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.localizacao_torneio_card {
+  margin: 2px 0 6px 0;        
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.categorias p {
+  margin: 0;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.categorias p:nth-child(1) { background: #ff6a00; }
+.categorias p:nth-child(2) { background: #5b36ff; }
+.categorias p:nth-child(3) { background: #a020f0; }
+
+
+.infos_extras {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;                   
+  margin-top: auto;
+  color: var(--text-color);           
+}
+
+.infos_extras > p:first-child {  
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.barra_de_conclusao {
+  width: 100%;
+  height: 6px;
+  background: #ffffff29;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.barra_de_conclusao_interna {
+  height: 100%;
+  background: #5b36ff;
+  width: var(--porcentagem, 50%);
+}
+
+.descricao_torneio_card {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+@media (max-width: 640px) {
+  .container_card_perfil {
+    max-width: 100%;
+    flex: 1 1 100%;
+    padding: 14px;
+    gap: 10px;
+  }
+  .titulo_torneio_card {
+    font-size: 1.25rem;
+    white-space: normal;      
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container_card_perfil {
+    flex: 1 1 calc(50% - 12px);
+  }
+}

@@ -193,7 +193,63 @@
 
 }
 
-/*Alterar Tema*/
+@media (max-width: 320px){
+  .team-title {
+    font-size: 1.35rem;    
+    margin-bottom: 32px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.25rem;
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+
+  .team-card {
+    max-width: 140px;       
+    width: 100%;
+    height: auto;
+    min-height: 235px;       
+    padding: 0.6rem;
+    backdrop-filter: none;   
+  }
+
+  .team-photo {
+    height: 110px;
+    border-radius: 6px;
+    margin-bottom: 0.45rem;
+  }
+
+  .team-card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .team-card p {
+    font-size: 0.65rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  .team-icons img {
+    width: 22px;
+    height: 22px;
+    margin: 0 4px;
+    transition: none;
+  }
+
+  .team-icons {
+    gap: 0.5rem;
+  }
+
+  .team-card:hover,
+  .team-card:hover::after {
+    box-shadow: none;
+    border: none;
+    animation: none;
+  }  
+}
 
 .dark-mode .team-title {
     color: #E8E5DE;

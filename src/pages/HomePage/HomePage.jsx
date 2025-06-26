@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const [modalAberto, setModalAberto] = useState(false);
-
   const [torneios, setTorneios] = useState(() => {
     const local = localStorage.getItem("torneiosRivalix");
     return local ? JSON.parse(local) : torneio;

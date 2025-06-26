@@ -52,22 +52,6 @@ export default function PlanosTorneio() {
     alert(` ${planoSelecionado.titulo} ativado com sucesso!`);
   };
 
-  // Requisição à API (com backend)
-  //const handleSelecionarPlano = async (plano) => {
-   
-    // Quando o back-end estiver pronto:
-    // try {
-    //   const response = await fetch("/api/stripe/create-checkout-session", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ priceId: plano.idStripe })
-    //   });
-    //   const { url } = await response.json();
-    //   window.location.href = url;
-    // } catch (error) {
-    //   console.error("Erro ao redirecionar para o checkout Stripe:", error);
-    // }
-
   return (
     <>
       <NavbarHome />
