@@ -60,7 +60,7 @@
 
 .detGrid p {
   margin: 0;
-  color: #fff;
+  color: var(--text-color);
   word-break: break-word;
 }
 
