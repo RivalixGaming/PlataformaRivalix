@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import NavbarHome from "../../Components/HomeNavBar/NavBarHome.jsx";
 import { ThemeContext } from '../../contexts/ThemeContext';
 import logoClaro from '../../assets/logoClaro.png';
-import logoDark from '../../assets/LogoDark.png';
+import logoDark from '../../assets/logoDark.png';
 import { useProfile } from '../../contexts/ProfileContext';
 import SelecionarAvatar from '../../Components/SelecionarAvatar/SelecionarAvatar.jsx';
 import './Configuracoes.css';
