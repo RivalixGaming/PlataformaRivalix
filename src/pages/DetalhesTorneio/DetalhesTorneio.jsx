@@ -1,34 +1,38 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import torneios from "../../data/torneios";
-import NavBarHome from "../../Components/HomeNavBar/NavBarHome";
-import style from "./DetalhesTorneio.module.css";
+import { useState }   from "react";
+import torneiosBase   from "../../data/torneios";   
+import NavBarHome     from "../../Components/HomeNavBar/NavBarHome";
+import style          from "./DetalhesTorneio.module.css";
 
-import VisaoGeral from "../../Components/TorneioVisaoGeral/TorneioVisaoGeral";
-import Chave from "../../Components/TorneioChave/TorneioChave";
-import Partida from "../../Components/TorneioPartida/TorneioPartida";
-import Participantes from "../../Components/TorneioParticipantes/TorneioParticipantes";
+import VisaoGeral     from "../../Components/TorneioVisaoGeral/TorneioVisaoGeral";
+import Chave          from "../../Components/TorneioChave/TorneioChave";
+import Partida        from "../../Components/TorneioPartida/TorneioPartida";
+import Participantes  from "../../Components/TorneioParticipantes/TorneioParticipantes";
 
 export default function DetalhesTorneio() {
-  const params = useParams();
-  const torneio = torneios.find((t) => t.id === parseInt(params.id));
+  const { id } = useParams();
 
-  if (!torneio) {
-    return <p>Torneio não encontrado</p>;
-  }
+  const extras = JSON.parse(localStorage.getItem("torneiosRivalix") || "[]");
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const todosTorneios = [...torneiosBase, ...extras];
+
+  const torneio = todosTorneios.find((t) => t.id === Number(id));
+
+  if (!torneio) return <p style={{ padding: "2rem" }}>Torneio não encontrado</p>;
+
   const [abaAtiva, setAbaAtiva] = useState("VisaoGeral");
 
   return (
     <>
       <NavBarHome />
+
       <main className="main-content">
         <img
           className={style.imagem_torneio_detalhes}
           src={torneio.imgTorneio}
-          alt=""
+          alt={torneio.titulo}
         />
+
         <div className={style.container_botao_data}>
           <div className={style.container_data}>
             <h4>{torneio.titulo}</h4>
@@ -36,50 +40,29 @@ export default function DetalhesTorneio() {
           </div>
           <div className={style.container_botoes_torneio}>
             <button>Entrar no Torneio</button>
-            <a href="#">
-              <i class="ri-chat-3-fill"></i>
-            </a>
-            <a href="#">
-              <i class="ri-share-line"></i>
-            </a>
+            <a href="#"><i className="ri-chat-3-fill"></i></a>
+            <a href="#"><i className="ri-share-line"></i></a>
           </div>
         </div>
 
         <div className={style.container_botoes_links}>
-          <button
-            className={abaAtiva === "VisaoGeral" ? style.ativo : ""}
-            onClick={() => setAbaAtiva("VisaoGeral")}
-          >
-            Visão Geral
-          </button>
-          <button
-            className={abaAtiva === "Chave" ? style.ativo : ""}
-            onClick={() => setAbaAtiva("Chave")}
-          >
-            Chave
-          </button>
-          <button
-            className={abaAtiva === "Participantes" ? style.ativo : ""}
-            onClick={() => setAbaAtiva("Participantes")}
-          >
-            Participantes
-          </button>
-          <button
-            className={abaAtiva === "Partida" ? style.ativo : ""}
-            onClick={() => setAbaAtiva("Partida")}
-          >
-            Partidas
-          </button>
+          {["VisaoGeral", "Chave", "Participantes", "Partida"].map((aba) => (
+            <button
+              key={aba}
+              className={abaAtiva === aba ? style.ativo : ""}
+              onClick={() => setAbaAtiva(aba)}
+            >
+              {aba === "VisaoGeral" ? "Visão Geral" : aba}
+            </button>
+          ))}
         </div>
 
         <div className={style.linha_separacao}></div>
 
-        <div>
-          {abaAtiva === "VisaoGeral" && <VisaoGeral torneio={torneio.id}/>}
-          {abaAtiva === "Chave" && <Chave torneio={torneio.id} />}
-          {abaAtiva === "Participantes" && <Participantes  torneio={torneio.id} />}
-          {abaAtiva === "Partida" && <Partida torneio={torneio.id} />}
-        </div>
+        {abaAtiva === "VisaoGeral"   && <VisaoGeral    torneio={torneio} />}
+        {abaAtiva === "Chave"        && <Chave         torneio={torneio} />}
+        {abaAtiva === "Participantes"&& <Participantes torneio={torneio} />}
+        {abaAtiva === "Partida"      && <Partida       torneio={torneio} />}
       </main>
     </>
   );
