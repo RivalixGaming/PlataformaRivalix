@@ -6,7 +6,7 @@ import ondaLight from '../../assets/onda.png';
 import ondaDark from '../../assets/onda-dark.png';
 import sfImg from '../../assets/SF.jpeg';
 import brawlhallaImg from '../../assets/brawlhalla.jpg';
-import tekkenImg from '../../assets/tekken8.jpg';
+import tekkenImg from '../../assets/Tekken8.jpg';
 import mkImg from '../../assets/MK1.avif';
 import torneioImg from '../../assets/participeTorneios.png';
 import arenaImg from '../../assets/torneio-esports.png';
