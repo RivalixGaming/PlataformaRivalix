@@ -6,13 +6,15 @@
 .container_detalhes_torneio {
   width: 60%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .container_detalhes_torneio div {
   font-size: 18px;
-  width: 33%;
-  padding-bottom: 30px;
+}
+
+.container_detalhes_torneio h2 {
+  margin-bottom: 1.5rem;
 }
 
 .container_detalhes_torneio div h4 {
@@ -43,13 +45,30 @@
   border-radius: 10px;
 }
 
+.detGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  column-gap: 80px;
+}
+
+.detGrid h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #bbb;
+}
+
+.detGrid p {
+  margin: 0;
+  color: #fff;
+  word-break: break-word;
+}
+
 @media (max-width: 740px) {
   .container_detalhes_torneio {
     width: 100%;
   }
-  .container_detalhes_torneio div {
-    width: 50%;
-  }
+
   .container_participantes {
     width: 100%;
     display: flex;
@@ -58,5 +77,10 @@
 
   .container_informacoes_particpantes {
     width: 100%;
+  }
+
+  .detGrid {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
   }
 }
