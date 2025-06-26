@@ -25,27 +25,43 @@
   scrollbar-gutter: stable both-edges;
 
   border: 2px solid #a020f0;
-  box-shadow:
-    0 0 12px #a020f0,
-    0 0 24px rgba(160, 32, 240, 0.4),
+  box-shadow: 0 0 12px #a020f0, 0 0 24px rgba(160, 32, 240, 0.4),
     0 0 48px rgba(160, 32, 240, 0.2);
 
   animation: neon-pulse 3s ease-in-out infinite;
 }
 
 @keyframes neon-pulse {
-  0%, 100% {
-    box-shadow:
-      0 0 12px #a020f0,
-      0 0 24px rgba(160, 32, 240, 0.4),
+  0%,
+  100% {
+    box-shadow: 0 0 12px #a020f0, 0 0 24px rgba(160, 32, 240, 0.4),
       0 0 48px rgba(160, 32, 240, 0.2);
   }
   50% {
-    box-shadow:
-      0 0 15px #005eff,
-      0 0 30px rgba(0, 94, 255, 0.4),
+    box-shadow: 0 0 15px #005eff, 0 0 30px rgba(0, 94, 255, 0.4),
       0 0 60px rgba(0, 94, 255, 0.25);
   }
+}
+
+.participantInputWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.participantInputWrapper button {
+  background-color: transparent;
+  color: var(--text-color);
+
+  border: solid 2px #e55a00;
+  border-radius: 10px;
+  padding: 6px 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.participantInputWrapper button:hover {
+  background-color: #e55a00;
+  color: white;
 }
 
 .modal::-webkit-scrollbar {

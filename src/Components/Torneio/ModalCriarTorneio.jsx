@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styles from './ModalCriarTorneio.module.css';
-import { useTheme } from '../../contexts/ThemeContext';
-import Padrao from '../../assets/torneios/imagemTorneioPadrao.png';
+import React, { useState } from "react";
+import styles from "./ModalCriarTorneio.module.css";
+import { useTheme } from "../../contexts/ThemeContext";
+import Padrao from "../../assets/torneios/imagemTorneioPadrao.png";
 
 export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
   if (!aberto) return null;
@@ -9,27 +9,27 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
   const { theme } = useTheme();
 
   /* ──────────── estados ──────────── */
-  const [titulo,       setTitulo]       = useState('');
-  const [jogo,         setJogo]         = useState('');
-  const [modalidade,   setModalidade]   = useState('Solo');
-  const [tipo,         setTipo]         = useState('Online');
-  const [formato,      setFormato]      = useState('Eliminação Única');
-  const [data,         setData]         = useState('');
-  const [hora,         setHora]         = useState('');
-  const [vagas,        setVagas]        = useState('');
-  const [valorEntrada, setValorEntrada] = useState('');
-  const [premio,       setPremio]       = useState('');
-  const [descricao,    setDescricao]    = useState('');
-  const [imagemBase,   setImagemBase]   = useState('');
+  const [titulo, setTitulo] = useState("");
+  const [jogo, setJogo] = useState("");
+  const [modalidade, setModalidade] = useState("Solo");
+  const [tipo, setTipo] = useState("Online");
+  const [formato, setFormato] = useState("Eliminação Única");
+  const [data, setData] = useState("");
+  const [hora, setHora] = useState("");
+  const [vagas, setVagas] = useState("");
+  const [valorEntrada, setValorEntrada] = useState("");
+  const [premio, setPremio] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [imagemBase, setImagemBase] = useState("");
 
   /* participantes (máx. 8) */
-  const [participantes,       setParticipantes]       = useState([]);
-  const [currentParticipante, setCurrentParticipante] = useState('');
+  const [participantes, setParticipantes] = useState([]);
+  const [currentParticipante, setCurrentParticipante] = useState("");
 
   const handleAddParticipante = () => {
     if (currentParticipante.trim() && participantes.length < 8) {
       setParticipantes([...participantes, currentParticipante.trim()]);
-      setCurrentParticipante('');
+      setCurrentParticipante("");
     }
   };
 
@@ -38,16 +38,16 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
   };
 
   /* endereço (somente se presencial) */
-  const [rua,    setRua]    = useState('');
-  const [numero, setNumero] = useState('');
-  const [bairro, setBairro] = useState('');
-  const [cidade, setCidade] = useState('');
-  const [estado, setEstado] = useState('');
-  const [cep,    setCep]    = useState('');
+  const [rua, setRua] = useState("");
+  const [numero, setNumero] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [estado, setEstado] = useState("");
+  const [cep, setCep] = useState("");
 
   /* ──────────── validação ──────────── */
   const enderecoValido =
-    tipo === 'Presencial'
+    tipo === "Presencial"
       ? rua && numero && bairro && cidade && estado && cep
       : true;
 
@@ -76,9 +76,9 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
     e.preventDefault();
 
     const endereco =
-      tipo === 'Presencial'
+      tipo === "Presencial"
         ? `${rua}, ${numero} - ${bairro}, ${cidade} - ${estado}, CEP: ${cep}`
-        : 'Online';
+        : "Online";
 
     const novoTorneio = {
       id: Date.now(),
@@ -93,7 +93,7 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
       totalVagas: +vagas,
       vagasRestantes: +vagas,
       entradaValor: parseFloat(valorEntrada) || 0,
-      premioTotal:  parseFloat(premio) || 0,
+      premioTotal: parseFloat(premio) || 0,
       descricao,
       imgTorneio: imagemBase || Padrao,
       participantes,
@@ -105,9 +105,11 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
 
   /* ──────────── JSX ──────────── */
   return (
-    <div className={`${styles.overlay} ${theme === 'dark' ? styles.dark : ''}`}>
-      <div className={`${styles.modal} ${theme === 'dark' ? styles.dark : ''}`}>
-        <button onClick={fechar} className={styles.fechar}>×</button>
+    <div className={`${styles.overlay} ${theme === "dark" ? styles.dark : ""}`}>
+      <div className={`${styles.modal} ${theme === "dark" ? styles.dark : ""}`}>
+        <button onClick={fechar} className={styles.fechar}>
+          ×
+        </button>
         <h2>Criar Torneio</h2>
 
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -120,8 +122,14 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
             required
           />
 
-          <select value={jogo} onChange={(e) => setJogo(e.target.value)} required>
-            <option value="" disabled>Selecione o jogo</option>
+          <select
+            value={jogo}
+            onChange={(e) => setJogo(e.target.value)}
+            required
+          >
+            <option value="" disabled>
+              Selecione o jogo
+            </option>
             <option>Brawlhalla</option>
             <option>Fatal Fury: City of the Wolves</option>
             <option>GBVSR</option>
@@ -131,7 +139,10 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
             <option>Tekken 8</option>
           </select>
 
-          <select value={modalidade} onChange={(e) => setModalidade(e.target.value)}>
+          <select
+            value={modalidade}
+            onChange={(e) => setModalidade(e.target.value)}
+          >
             <option value="Solo">Solo</option>
             <option value="Dupla">Dupla</option>
             <option value="Equipe">Equipe</option>
@@ -144,25 +155,67 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
 
           {/* formato, data e hora */}
           <select value={formato} onChange={(e) => setFormato(e.target.value)}>
-            <option value="" disabled>Selecione o formato</option>
+            <option value="" disabled>
+              Selecione o formato
+            </option>
             <option>Eliminação Única</option>
             <option>Eliminação Dupla</option>
             <option>Fase de Grupos + Eliminação</option>
             <option>Ranking por Pontos</option>
           </select>
 
-          <input type="date" value={data} onChange={(e) => setData(e.target.value)} required />
-          <input type="time" value={hora} onChange={(e) => setHora(e.target.value)} required />
+          <input
+            type="date"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+            required
+          />
+          <input
+            type="time"
+            value={hora}
+            onChange={(e) => setHora(e.target.value)}
+            required
+          />
 
           {/* endereço se Presencial */}
-          {tipo === 'Presencial' && (
+          {tipo === "Presencial" && (
             <div className={styles.endereco}>
-              <input placeholder="Rua"     value={rua}    onChange={(e) => setRua(e.target.value)}    required />
-              <input placeholder="Número"  value={numero} onChange={(e) => setNumero(e.target.value)} required />
-              <input placeholder="Bairro"  value={bairro} onChange={(e) => setBairro(e.target.value)} required />
-              <input placeholder="Cidade"  value={cidade} onChange={(e) => setCidade(e.target.value)} required />
-              <input placeholder="Estado"  value={estado} onChange={(e) => setEstado(e.target.value)} required />
-              <input placeholder="CEP"     value={cep}    onChange={(e) => setCep(e.target.value)}    required />
+              <input
+                placeholder="Rua"
+                value={rua}
+                onChange={(e) => setRua(e.target.value)}
+                required
+              />
+              <input
+                placeholder="Número"
+                value={numero}
+                onChange={(e) => setNumero(e.target.value)}
+                required
+              />
+              <input
+                placeholder="Bairro"
+                value={bairro}
+                onChange={(e) => setBairro(e.target.value)}
+                required
+              />
+              <input
+                placeholder="Cidade"
+                value={cidade}
+                onChange={(e) => setCidade(e.target.value)}
+                required
+              />
+              <input
+                placeholder="Estado"
+                value={estado}
+                onChange={(e) => setEstado(e.target.value)}
+                required
+              />
+              <input
+                placeholder="CEP"
+                value={cep}
+                onChange={(e) => setCep(e.target.value)}
+                required
+              />
             </div>
           )}
 
@@ -193,7 +246,7 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
             <img
               src={imagemBase}
               alt="Prévia"
-              style={{ width: '100%', borderRadius: 8, marginTop: '0.5rem' }}
+              style={{ width: "100%", borderRadius: 8, marginTop: "0.5rem" }}
             />
           )}
 
@@ -221,7 +274,10 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
               {participantes.map((p, idx) => (
                 <li key={idx}>
                   {p}
-                  <button type="button" onClick={() => handleRemoveParticipante(idx)}>
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveParticipante(idx)}
+                  >
                     ×
                   </button>
                 </li>

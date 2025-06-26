@@ -65,3 +65,22 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* @media (max-width: 768px) {
+  .container_chaves {
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1rem;
+    -webkit-overflow-scrolling: touch;
+    width: auto;
+  }
+
+  .bracket {
+    scrollbar-width: thin;
+
+  }
+
+  .bracket::-webkit-scrollbar-thumb {
+
+  }
+} */
