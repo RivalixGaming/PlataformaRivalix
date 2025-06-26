@@ -1,4 +1,4 @@
-import torneios from "../../data/torneios";
+
 import style from "./TorneioVisaoGeral.module.css"
 
 

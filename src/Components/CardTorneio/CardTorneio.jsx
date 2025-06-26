@@ -28,7 +28,7 @@ export default function CardTorneio({
       />
 
       <h3 className={styles.titulo_torneio_card}>{titulo}</h3>
-      <p  className={styles.localizacao_torneio_card}>{localizacao}</p>
+      <p  className={styles.localizacao_torneio_card}>{jogo}</p>
 
       <div className={styles.categorias}>
         <p>{modalidade}</p>
@@ -46,7 +46,7 @@ export default function CardTorneio({
           />
         </div>
 
-        <p className={styles.descricao_torneio_card}>{jogo}</p>
+        <p className={styles.descricao_torneio_card}>{localizacao}</p>
       </div>
     </Link>
   );

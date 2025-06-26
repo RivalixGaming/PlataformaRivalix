@@ -2,11 +2,12 @@ import "./MeusTorneios.css";
 import { Link } from "react-router-dom";
 import NavBarHome from "../../Components/HomeNavBar/NavBarHome";
 import CardTorneio from "../../Components/CardTorneio/CardTorneio";
+import torneioInicial from "../../data/torneios";
 import ModalCriarTorneio from "../../Components/Torneio/ModalCriarTorneio";
 import { useState, useEffect } from "react";
 
 export default function MeusTorneios() {
-  const [modalAberto, setModalAberto] = useState(false);
+
   const [meusTorneios, setMeusTorneios] = useState([]);
 
   // Carrega os torneios salvos no localStorage ao abrir a página
@@ -16,12 +17,30 @@ export default function MeusTorneios() {
       setMeusTorneios(JSON.parse(local));
     }
   }, []);
+  const [modalAberto, setModalAberto] = useState(false);
 
-  // Salva o novo torneio no estado e no localStorage
-  const adicionarTorneio = (novoTorneio) => {
-    const atualizado = [...meusTorneios, novoTorneio];
-    setMeusTorneios(atualizado);
-    localStorage.setItem("meusTorneiosRivalix", JSON.stringify(atualizado));
+  // 1) carrega lista geral do localStorage ou do mock
+  const [torneios, setTorneios] = useState(() => {
+    const local = localStorage.getItem("torneiosRivalix");
+    return local ? JSON.parse(local) : torneioInicial;
+  });
+
+  // 2) persiste sempre que a lista geral mudar
+  useEffect(() => {
+    localStorage.setItem("torneiosRivalix", JSON.stringify(torneios));
+  }, [torneios]);
+
+  // 3) salva tanto na lista geral quanto em "Meus Torneios"
+  const salvarTorneio = (novoTorneio) => {
+    // atualiza lista pública (estado + localStorage)
+    const listaPublicaAtualizada = [...torneios, novoTorneio];
+    setTorneios(listaPublicaAtualizada);
+    localStorage.setItem("torneiosRivalix", JSON.stringify(listaPublicaAtualizada));
+
+    // atualiza lista pessoal
+    const meus = JSON.parse(localStorage.getItem("meusTorneiosRivalix") || "[]");
+    meus.push(novoTorneio);
+    localStorage.setItem("meusTorneiosRivalix", JSON.stringify(meus));
   };
 
   return (
@@ -87,10 +106,11 @@ export default function MeusTorneios() {
         </div>
       </main>
 
+      {/* modal */}
       <ModalCriarTorneio
         aberto={modalAberto}
         fechar={() => setModalAberto(false)}
-        salvarTorneio={adicionarTorneio}
+        salvarTorneio={salvarTorneio}
       />
     </>
   );

@@ -44,8 +44,8 @@ export default function TorneioChave({ torneio, onBracketReset }) {
         if (savedBracket) {
             return JSON.parse(savedBracket);
         }
-        const players = (torneio.participants && torneio.participants.length > 0)
-            ? torneio.participants
+        const players = (torneio.participantes && torneio.participantes.length > 0)
+            ? torneio.participantes
             : playerNames;
         return generateBracket(players);
     });
@@ -99,7 +99,7 @@ export default function TorneioChave({ torneio, onBracketReset }) {
         const todosOsTorneios = JSON.parse(localStorage.getItem('torneiosRivalix') || '[]');
         const torneioIndex = todosOsTorneios.findIndex(t => t.id === torneio.id);
         if (torneioIndex !== -1) {
-            todosOsTorneios[torneioIndex].participants = newPlayers;
+            todosOsTorneios[torneioIndex].participantes = newPlayers;
             localStorage.setItem('torneiosRivalix', JSON.stringify(todosOsTorneios));
         }
 
