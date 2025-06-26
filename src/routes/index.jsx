@@ -45,6 +45,5 @@ export const router = createBrowserRouter([
       { path: "/loja", element: <Loja />},
     ]
   }
-],
-  {basename: "/PlataformaRivalix"}
+]
 );

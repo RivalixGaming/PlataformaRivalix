@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head> <meta charset="UTF-8" /> </head>
+<body>
+  <script>
+    // redireciona qualquer 404 para a SPA
+    const repo = "/<repo-name>";
+    const path = location.pathname.replace(repo, "");
+    location.replace(${repo}/#${path});
+  </script>
+</body>
+</html>
