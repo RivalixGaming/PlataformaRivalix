@@ -1,5 +1,5 @@
 import style from "./UserList.module.css";
-import defaultAvatar from '../../assets/icon-teste-2.png';
+import defaultAvatar from '/src/assets/icon-teste-2.png';
 
 export default function UserList({ nome = "Nome do Usuário", pontos = 12345, avatar = defaultAvatar }) {
   return (
