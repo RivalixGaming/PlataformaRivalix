@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Footer.css';
 
 import logoClaro from '../../assets/logoClaro.png';
-import logoDark from '../../assets/logoDark.png';
+import logoDark from "/src/assets/logoDark.png";
 
 import instagramIcon from '../../assets/icon/instagram.svg';
 import githubIcon from '../../assets/icon/mdi--github.svg';
