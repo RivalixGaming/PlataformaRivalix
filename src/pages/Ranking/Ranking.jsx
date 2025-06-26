@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import UserRanking from "../../Components/UserRanking/UserRanking.jsx";
 import styles from "./RankingPage.module.css";
-import defaultAvatar from "../../assets/icon-teste-2.png";
+import defaultAvatar from '/src/assets/icon-teste-2.png';
 import NavbarHome from "../../Components/HomeNavBar/NavBarHome.jsx";
 
 // Simula um ranking de jogadores
