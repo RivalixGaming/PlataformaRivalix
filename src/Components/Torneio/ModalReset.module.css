@@ -1,0 +1,182 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.modal {
+  background-color: #ffffff;
+  color: #111111;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  scrollbar-gutter: stable both-edges;
+
+  border: 2px solid #a020f0;
+  box-shadow: 0 0 12px #a020f0, 0 0 24px rgba(160, 32, 240, 0.4),
+    0 0 48px rgba(160, 32, 240, 0.2);
+
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px #a020f0, 0 0 24px rgba(160, 32, 240, 0.4),
+      0 0 48px rgba(160, 32, 240, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px #005eff, 0 0 30px rgba(0, 94, 255, 0.4),
+      0 0 60px rgba(0, 94, 255, 0.25);
+  }
+}
+/* ---------------------------------------------------- */
+
+
+/* ==================================================== */
+/* === ESTILOS ESPECÍFICOS DO ModalResetBracket ======= */
+/* ==================================================== */
+
+/* Seção que agrupa título, input e lista */
+.participantSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Wrapper do input + botão “Adicionar” (já existia) */
+.participantInputWrapper {
+  display: flex;
+  gap: 6px;
+}
+
+/* Lista de participantes */
+.participantList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+/* Cada item da lista */
+.participantList li {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Botão “X” de remover participante */
+.participantList li button {
+  background: transparent;
+  border: 2px solid #e55a00;
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: #e55a00;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.participantList li button:hover {
+  background: #e55a00;
+  color: #fff;
+}
+
+/* ---------------------------------------------------- */
+/* === BOTÃO “Confirmar e Resetar Chave” (herda) ======= */
+button[type="submit"],
+button:not(.fechar) {
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover,
+button:not(.fechar):hover {
+  background-color: #e55a00;
+}
+
+button[disabled] {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ---------------------------------------------------- */
+/* === DARK MODE ====================================== */
+.dark .modal {
+  background-color: #1c1c1e;
+  color: #f1f1f1;
+  border: 2px solid #a020f0;
+}
+
+.dark .participantList li {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+
+.dark .participantList li button {
+  border-color: #ff6a00;
+  color: #ff6a00;
+}
+
+.dark .participantList li button:hover {
+  background: #ff6a00;
+  color: #1c1c1e;
+}
+
+.dark button[type="submit"],
+.dark button:not(.fechar) {
+  background-color: #ff6a00;
+}
+
+.dark button[type="submit"]:hover,
+.dark button:not(.fechar):hover {
+  background-color: #e55a00;
+}
+
+/* ---------------------------------------------------- */
+/* === RESPONSIVIDADE ================================= */
+@media (max-width: 600px) {
+  .participantList {
+    grid-template-columns: 1fr; /* 1 coluna em telas estreitas */
+  }
+}
+
+@media (max-width: 450px) {
+  .modal {
+    padding: 1.5rem;
+  }
+  .participantInputWrapper {
+    flex-direction: column;
+  }
+  .participantInputWrapper button {
+    width: 100%;
+  }
+}

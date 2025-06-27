@@ -13,8 +13,10 @@ export default function ArteCard({ id, imagem, titulo, autor }) {
 
   return (
     <div className={styles.card}>
-      <img src={imagem} alt={titulo} className={styles.imagem} />
-      <div className={styles.rodape}>
+       <div className={styles.thumbBox}>
+          <img src={imagem} alt={titulo} className={styles.imagem} />
+        </div>
+        <div className={styles.rodape}>
         <div>
           <p className={styles.titulo}>{titulo}</p>
           {autor && <span className={styles.autor}>por {autor}</span>}

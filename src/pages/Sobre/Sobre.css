@@ -178,18 +178,19 @@
   }
 
   .about-page__slogan-container {
-    width: 90%;
-    gap: 3rem;
+    width: 100%;
+    gap: 1.5rem;
+    margin: -20px 0;
   }
 
   .about-page__slogan {
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 100%;
     text-align: center;
   }
 
   .about-page__line {
-    width: 80%;
+    width: 90%;
     filter: blur(0.5px);
   }
 
@@ -220,7 +221,7 @@
     box-shadow: 0px 0px 15px 5px #ffffffce;
     filter: blur(1px);
     width: 80%;
-    margin: 40px auto;
+    margin: 10px auto 0 auto;
   }
 }
 
@@ -254,18 +255,16 @@
   }
 
   .about-page__slogan {
-    font-size: 1.6rem;      /* antes 2 rem */
+    font-size: 1.6rem;  
     line-height: 1.25;
   }
 
-  /* Linha divisória mais fina para não “pesar” */
   .about-page__line,
   .about-page__divider--mobile {
     width: 88%;
     box-shadow: 0 0 10px 3px #ffffffb3;
   }
 
-  /* Seção de equipe alinhada e compacta */
   .about-page__team {
     gap: 32px;
     padding: 0 4%;
@@ -277,19 +276,17 @@
 
   .about-page__team-image {
     width: 100%;
-    max-height: 280px;      /* evita “esticão” vertical */
+    max-height: 280px;      
     border-radius: 18px;
   }
 
   .about-page__team-text {
-    font-size: 1.2rem;      /* antes 1.4 rem */
+    font-size: 1.2rem;     
     width: 100%;
-    margin-left: 0;         /* centralizado */
+    margin-left: 0;        
     text-align: center;
   }
 }
-
-/*Alterar Tema*/
 
 .dark-mode .about-page__intro {
   color: #E8E5DE;

@@ -83,7 +83,6 @@
   }
 }
 
-/* === Responsivo para mobile (até 767px) === */
 @media (max-width: 767px) {
   .container {
     padding: 1.2rem;

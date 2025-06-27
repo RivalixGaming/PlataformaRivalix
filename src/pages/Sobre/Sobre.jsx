@@ -2,7 +2,7 @@ import Navbar from "../../Components/Navbar/Navbar.jsx";
 import Footer from "../../Components/Footer/Footer.jsx"
 import './Sobre.css';
 import Team from '../../Components/Team/Team.jsx';
-import teamImage from "../../assets/imagemBastidores.png";
+import teamImage from "../../assets/imagemBastidores.jpg";
 import ScrollReveal from 'scrollreveal';
 import {useEffect} from "react";
 

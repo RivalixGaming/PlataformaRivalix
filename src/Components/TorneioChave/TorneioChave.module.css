@@ -1,7 +1,6 @@
 .bracket {
   display: flex;
   justify-content: space-around;
-  background-color: #1c1c1e; /* Um fundo escuro para destacar */
   padding: 20px;
   border-radius: 10px;
   min-height: 600px;
@@ -66,21 +65,56 @@
   cursor: pointer;
 }
 
-/* @media (max-width: 768px) {
-  .container_chaves {
+@media (max-width: 767px) {
+
+  .bracketWrapper {
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 1rem;
     -webkit-overflow-scrolling: touch;
-    width: auto;
+    padding: 0 4px;
   }
 
   .bracket {
-    scrollbar-width: thin;
-
+    flex-wrap: nowrap;
+    gap: 1rem;              
+    min-width: 560px;        
   }
 
-  .bracket::-webkit-scrollbar-thumb {
-
+  .round {
+    min-width: 140px;
+    gap: 0.75rem;
   }
-} */
+
+  .match {
+    padding: 12px 10px;
+    margin: 14px 0;
+    font-size: 0.75rem;
+  }
+
+  .round h3 {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .round {
+    min-width: 120px;
+  }
+
+  .match {
+    padding: 10px 8px;
+    font-size: 0.7rem;
+  }
+
+  .round h3 {
+    font-size: 0.7rem;
+  }
+}
+
+.bracketWrapper::-webkit-scrollbar {
+  display: none;          
+}
+.bracketWrapper {
+  scrollbar-width: none;
+}

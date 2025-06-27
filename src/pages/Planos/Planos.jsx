@@ -1,7 +1,8 @@
 import styles from './Planos.module.css';
 import NavbarHome from '../../Components/HomeNavBar/NavBarHome.jsx';
 import ModalPlano from '../../Components/ModalPlano/ModalPlano.jsx';
-import { useState } from 'react';
+import Toast from '../../Components/Loja/CompraFinalizada.jsx';
+import React, { useState, useEffect } from 'react';
 
 export default function PlanosTorneio() {
 
@@ -46,10 +47,18 @@ export default function PlanosTorneio() {
   const [planoAtivo, setPlanoAtivo] = useState(planos[0]);
   const [planoSelecionado, setPlanoSelecionado] = useState(null);
 
+  const [toastMsg, setToastMsg] = useState('');
+
+  useEffect(() => {
+    if (!toastMsg) return;
+    const id = setTimeout(() => setToastMsg(''), 4000);
+    return () => clearTimeout(id);         
+  }, [toastMsg]);
+
   const handleConfirmar = () => {
     setPlanoAtivo(planoSelecionado);
     setPlanoSelecionado(null);      
-    alert(` ${planoSelecionado.titulo} ativado com sucesso!`);
+    setToastMsg(` ${planoSelecionado.titulo} ativado com sucesso!`);
   };
 
   return (
@@ -106,6 +115,8 @@ export default function PlanosTorneio() {
           onFechar={() => setPlanoSelecionado(null)}
         />
       )}
+
+      {toastMsg && <Toast mensagem={toastMsg} />}
     </>
   );
 }

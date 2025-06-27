@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './MatchModal.module.css'; // Usando CSS Modules
 
 function MatchModal({ match, isOpen, onClose, onConfirmWinner }) {

@@ -12,6 +12,7 @@
   color: #e3e3e3;                                  
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  scroll-snap-align: start;
 }
 
 .container_card_perfil:hover {
@@ -99,7 +100,7 @@
   color: var(--text-color);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .container_card_perfil {
     max-width: 100%;
     flex: 1 1 100%;
@@ -112,7 +113,7 @@
   }
 }
 
-@media (min-width: 641px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .container_card_perfil {
     flex: 1 1 calc(50% - 12px);
   }

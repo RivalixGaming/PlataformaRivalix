@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import style from './ModalCriarTorneio.module.css'; // Reutiliza o mesmo estilo
+import style from './ModalCriarTorneio.module.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export default function ModalResetBracket({ isOpen, onClose, onConfirm }) {
+  const { theme } = useTheme();
   const [participants, setParticipants] = useState([]);
   const [currentParticipant, setCurrentParticipant] = useState('');
 
@@ -19,7 +21,7 @@ export default function ModalResetBracket({ isOpen, onClose, onConfirm }) {
   const handleConfirmClick = () => {
     if (participants.length === 8) {
       onConfirm(participants);
-      setParticipants([]); // Limpa para a próxima vez
+      setParticipants([]);
       onClose();
     } else {
       alert('Por favor, adicione 8 participantes.');

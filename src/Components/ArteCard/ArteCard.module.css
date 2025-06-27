@@ -1,6 +1,5 @@
 .card {
   background: rgba(255, 255, 255, 0.02);
-  border: 2px solid var(--roxo-vivo);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 12px var(--roxo-vivo);
@@ -8,6 +7,24 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
+}
+
+.thumbBox {
+  width: 100%;
+  aspect-ratio: 1 / 1;       
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  flex-shrink: 0;            
+}
+
+
+.thumbBox img {
+  position: absolute;
+  inset: 0;                  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
 }
 
 .card:hover {

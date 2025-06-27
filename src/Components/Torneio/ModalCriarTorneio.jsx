@@ -22,7 +22,6 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
   const [descricao, setDescricao] = useState("");
   const [imagemBase, setImagemBase] = useState("");
 
-  /* participantes (máx. 8) */
   const [participantes, setParticipantes] = useState([]);
   const [currentParticipante, setCurrentParticipante] = useState("");
 
@@ -37,7 +36,6 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
     setParticipantes(participantes.filter((_, idx) => idx !== indexToRemove));
   };
 
-  /* endereço (somente se presencial) */
   const [rua, setRua] = useState("");
   const [numero, setNumero] = useState("");
   const [bairro, setBairro] = useState("");
@@ -45,7 +43,6 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
   const [estado, setEstado] = useState("");
   const [cep, setCep] = useState("");
 
-  /* ──────────── validação ──────────── */
   const enderecoValido =
     tipo === "Presencial"
       ? rua && numero && bairro && cidade && estado && cep
@@ -63,7 +60,6 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
     Number(vagas) > 0 &&
     enderecoValido;
 
-  /* ──────────── imagem ──────────── */
   const handleUploadImagem = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -90,6 +86,7 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
       data,
       hora,
       endereco,
+      estado,
       totalVagas: +vagas,
       vagasRestantes: +vagas,
       entradaValor: parseFloat(valorEntrada) || 0,
@@ -103,7 +100,6 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
     fechar();
   };
 
-  /* ──────────── JSX ──────────── */
   return (
     <div className={`${styles.overlay} ${theme === "dark" ? styles.dark : ""}`}>
       <div className={`${styles.modal} ${theme === "dark" ? styles.dark : ""}`}>

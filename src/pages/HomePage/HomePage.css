@@ -1,4 +1,3 @@
-
 .section_um_home {
   display: flex;
   justify-content: space-around;
@@ -238,7 +237,7 @@
   }
 }
 
-@media (max-width:740px) {
+@media (max-width:767px) {
 
   .container_info_botao_home_torneios{
     padding: 0;
@@ -261,11 +260,41 @@
     display: none;
   }
 
+  .container_cards_torneios_home {
+    display: flex; 
+    grid-auto-columns: minmax(260px, 80%);
+    padding: 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
 
+  .container_cards_torneios_home > *,
+  .container_card_perfil {
+    flex: 0 0 clamp(260px, 80%, 320px);
+    scroll-snap-align: start;
+    margin-right: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .container_cards_torneios_home > *:last-child {
+    margin-right: 0;
+  }
+
+  .container_cards_torneios_home::-webkit-scrollbar{
+    display: none;
+  }
 }
 
-@media (max-width:381px) {
-  main{
-    margin-top: 110px;
+@media (max-width:480px) {
+
+  .container_cards_torneios_home {                    
+    gap: 0.6rem;
+  }
+
+  .container_cards_torneios_home > *,
+  .container_card_perfil {
+    flex: 0 0 clamp(240px, 85%, 320px);
   }
 }

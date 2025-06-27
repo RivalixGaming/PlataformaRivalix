@@ -117,42 +117,44 @@ export default function TorneioChave({ torneio, onBracketReset }) {
         <>
             <div className={style.container_chaves}>
                 <h2 style={{ fontSize: '30px' }}>Chave de torneio</h2>
-                <div className={style.bracket}>
-                    {rounds.map((round, roundIndex) => (
-                        <div className={style.round} key={round.title}>
-                            <h3>{round.title}</h3>
-                            {round.matches.map((match, matchIndex) => {
-                                const isPlayable = match.player1 && match.player2 && !match.winner;
+                <div className={style.bracketWrapper}>
+                    <div className={style.bracket}>
+                        {rounds.map((round, roundIndex) => (
+                            <div className={style.round} key={round.title}>
+                                <h3>{round.title}</h3>
+                                {round.matches.map((match, matchIndex) => {
+                                    const isPlayable = match.player1 && match.player2 && !match.winner;
 
-                                const isChampionRound = round.title === 'Campeão';
+                                    const isChampionRound = round.title === 'Campeão';
 
-                                if (isChampionRound) {
-                                    // Se for o round do campeão, renderiza este bloco especial
+                                    if (isChampionRound) {
+                                        // Se for o round do campeão, renderiza este bloco especial
+                                        return (
+                                            <div className={`${style.match} ${style.champion}`} key={match.id}>
+                                                <div className={style.championTitle}>CAMPEÃO</div>
+                                                <div className={style.championName}>{match.player1 || 'A definir'}</div>
+                                            </div>
+                                        );
+                                    }
+
                                     return (
-                                        <div className={`${style.match} ${style.champion}`} key={match.id}>
-                                            <div className={style.championTitle}>CAMPEÃO</div>
-                                            <div className={style.championName}>{match.player1 || 'A definir'}</div>
+                                        <div
+                                            className={`${style.match} ${isPlayable ? style.playable : ''}`}
+                                            key={match.id}
+                                            onClick={() => isPlayable && handleOpenModal(roundIndex, matchIndex)}
+                                        >
+                                            <div className={style.player}>{match.player1 || 'A definir'}</div>
+                                            <div className={style.vs}>vs</div>
+                                            <div className={style.player}>{match.player2 || 'A definir'}</div>
+                                            {match.winner && (
+                                                <div className={style.winner}>Vencedor: {match.winner}</div>
+                                            )}
                                         </div>
                                     );
-                                }
-
-                                return (
-                                    <div
-                                        className={`${style.match} ${isPlayable ? style.playable : ''}`}
-                                        key={match.id}
-                                        onClick={() => isPlayable && handleOpenModal(roundIndex, matchIndex)}
-                                    >
-                                        <div className={style.player}>{match.player1 || 'A definir'}</div>
-                                        <div className={style.vs}>vs</div>
-                                        <div className={style.player}>{match.player2 || 'A definir'}</div>
-                                        {match.winner && (
-                                            <div className={style.winner}>Vencedor: {match.winner}</div>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    ))}
+                                })}
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <button onClick={handleReset} className={style.resetButton}>Resetar Torneio</button>
             </div>

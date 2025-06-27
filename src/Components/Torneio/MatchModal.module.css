@@ -78,3 +78,61 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .modalContent {
+    padding: 20px;
+    width: 95%;
+    max-width: 360px;
+  }
+
+  .matchInfo {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1em;
+  }
+
+  .vs {
+    margin: 10px 0;
+  }
+
+  .modalActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .winnerButton {
+    width: 100%;
+    font-size: 0.95em;
+    padding: 10px;
+  }
+
+  .closeButton {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.95em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 374px) {
+  .modalContent {
+    padding: 16px;
+    max-width: 320px;
+  }
+
+  .playerName {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  .winnerButton,
+  .closeButton {
+    font-size: 0.85em;
+    padding: 8px;
+  }
+
+  .matchInfo {
+    font-size: 0.9em;
+  }
+}

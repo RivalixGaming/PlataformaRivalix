@@ -85,6 +85,7 @@ export default function Torneios() {
                 vagaRestante={t.vagasRestantes}
                 vagaTotal={t.totalVagas}
                 jogo={t.jogo}
+                estado={t.estado}
               />
             ))}
           </div>

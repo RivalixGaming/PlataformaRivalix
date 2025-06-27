@@ -1,5 +1,3 @@
-
-
 .imagem_torneio_detalhes{
     width: 100%;
     height: 400px;
@@ -38,6 +36,7 @@
     border: 2px solid #ff6a00;
     border-radius: 10px;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 .container_botao_data .container_botoes_torneio button:hover{
@@ -70,6 +69,18 @@
     height: 2px;
     background-color: blueviolet;
     margin-bottom: 30px;
+}
+
+.remover {
+  opacity: 0.55;                
+  filter: saturate(70%);
+  cursor: pointer;       
+}
+
+.remover:hover {
+  opacity: 1;
+  box-shadow: 0 0 10px #ff6a00;
+  filter: saturate(90%)
 }
 
 @media (max-width:740px) {
