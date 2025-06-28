@@ -91,7 +91,7 @@ Novas funcionalidades estão sendo implementadas e o projeto segue em evolução
 
 ---
 
-# #👥 Contribuidores
+## 👥 Contribuidores
 Acesse a aba de [contribuidores](https://github.com/rivalixgaming/PlataformaRivalix/graphs/contributors) no GitHub para conhecer quem participou deste projeto.
 
 ---
