@@ -69,7 +69,6 @@
     align-items: center;
     padding: 8px 12px;
     gap: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
     flex-wrap: nowrap;
   }
@@ -100,7 +99,7 @@
   .user-card-pontos {
     background-color: rgb(114, 111, 111);
     font-size: 0.7rem;
-    padding: 5px 8px;
+    padding: 5px 5px;
     border-radius: 8px;
     color: white;
     white-space: nowrap;
