@@ -110,6 +110,7 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
 
         <form onSubmit={handleSubmit} className={styles.form}>
           {/* título, jogo, modalidade, tipo */}
+          <label>Nome do Torneios <span> *</span></label>
           <input
             type="text"
             placeholder="Título do Torneio"
@@ -135,6 +136,7 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
             <option>Tekken 8</option>
           </select>
 
+          
           <select
             value={modalidade}
             onChange={(e) => setModalidade(e.target.value)}
@@ -148,30 +150,6 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
             <option value="Online">Online</option>
             <option value="Presencial">Presencial</option>
           </select>
-
-          {/* formato, data e hora */}
-          <select value={formato} onChange={(e) => setFormato(e.target.value)}>
-            <option value="" disabled>
-              Selecione o formato
-            </option>
-            <option>Eliminação Única</option>
-            <option>Eliminação Dupla</option>
-            <option>Fase de Grupos + Eliminação</option>
-            <option>Ranking por Pontos</option>
-          </select>
-
-          <input
-            type="date"
-            value={data}
-            onChange={(e) => setData(e.target.value)}
-            required
-          />
-          <input
-            type="time"
-            value={hora}
-            onChange={(e) => setHora(e.target.value)}
-            required
-          />
 
           {/* endereço se Presencial */}
           {tipo === "Presencial" && (
@@ -214,6 +192,35 @@ export default function ModalCriarTorneio({ aberto, fechar, salvarTorneio }) {
               />
             </div>
           )}
+
+          <select value={formato} onChange={(e) => setFormato(e.target.value)}>
+            <option value="" disabled>
+              Selecione o formato
+            </option>
+            <option>Eliminação Única</option>
+            <option>Eliminação Dupla</option>
+            <option>Fase de Grupos + Eliminação</option>
+            <option>Ranking por Pontos</option>
+          </select>
+
+          
+          {/* formato, data e hora */}
+          <label>Data do Torneio<span> *</span></label>
+          <input
+            type="date"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+            required
+          />
+
+          <label>Horário de Inicio <span> *</span></label>
+          <input
+            type="time"
+            value={hora}
+            onChange={(e) => setHora(e.target.value)}
+            required
+          />
+
 
           {/* vagas, valores, imagens */}
           <input

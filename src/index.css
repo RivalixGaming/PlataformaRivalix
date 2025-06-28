@@ -55,7 +55,6 @@ header {
   z-index: 1000;
 }
 
-/*Alterar Tema*/
 
 body {
     transition: background-color 0.5s ease;
@@ -82,9 +81,9 @@ body.dark-mode {
 @media (max-width: 740px) {
   .main-content {
     margin: 0;
-    margin-top: 100px;
+    margin-top: 90px;
     z-index: 0;
-    margin-bottom: 110px;
+    margin-bottom: 90px;
     z-index: 0;
   }
 

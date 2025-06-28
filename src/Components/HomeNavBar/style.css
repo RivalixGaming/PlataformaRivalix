@@ -329,7 +329,7 @@ li {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 110px;
+  height: 90px;
   background-color: var(--bg-color);
   border-top: 2px solid var(--off-white);
   z-index: 1000;
@@ -412,7 +412,7 @@ li {
 @media (max-width: 740px) {
   .container_header {
     position: fixed;
-    height: 100px;
+    height: 90px;
     top: 0;
     left: 0;
     right: 0;
@@ -461,7 +461,7 @@ li {
 
 @media (max-width: 381px) {
   .container_header {
-    height: 100px;
+    height: 90px;
   }
 
   .logo_rivalix {
