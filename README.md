@@ -15,8 +15,8 @@ A **Plataforma Rivalix** tem como objetivo conectar jogadores e organizadores de
 
 - [React](https://reactjs.org/)
 - [React Router DOM](https://reactrouter.com/)
-- [Vite](https://vitejs.dev/) *(se estiver usando no projeto)*
-- [CSS Modules]
+- [Vite](https://vitejs.dev/)
+- [CSS Modules](https://github.com/css-modules/css-modules)
 
 ---
 
