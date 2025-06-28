@@ -24,10 +24,10 @@ A **Plataforma Rivalix** tem como objetivo conectar jogadores e organizadores de
 
 ```bash
 # Clone o repositório
-git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/RivalixGaming/PlataformaRivalix)
+git clone https://github.com/RivalixGaming/PlataformaRivalix
 
 # Acesse a pasta
-cd seu-repositorio
+cd PlataformaRivalix
 
 # Instale as dependências
 npm install
