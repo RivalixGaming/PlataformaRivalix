@@ -6,7 +6,6 @@ export default function CardTorneio({
   id,
   titulo,
   foto,
-  localizacao,
   modalidade,
   tipo,
   data,

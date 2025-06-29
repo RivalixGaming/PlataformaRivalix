@@ -1,7 +1,7 @@
-import "./Torneios.css";
+import styles from "./Torneios.module.css";
 import { Link } from "react-router-dom";
-import NavBarHome   from "../../Components/HomeNavBar/NavBarHome";
-import CardTorneio  from "../../Components/CardTorneio/CardTorneio";
+import NavBarHome from "../../Components/HomeNavBar/NavBarHome";
+import CardTorneio from "../../Components/CardTorneio/CardTorneio";
 import torneioInicial from "../../data/torneios";
 import ModalCriarTorneio from "../../Components/Torneio/ModalCriarTorneio";
 import React, { useState, useEffect } from "react";
@@ -9,26 +9,26 @@ import React, { useState, useEffect } from "react";
 export default function Torneios() {
   const [modalAberto, setModalAberto] = useState(false);
 
-  // 1) carrega lista geral do localStorage ou do mock
   const [torneios, setTorneios] = useState(() => {
     const local = localStorage.getItem("torneiosRivalix");
     return local ? JSON.parse(local) : torneioInicial;
   });
 
-  // 2) persiste sempre que a lista geral mudar
   useEffect(() => {
     localStorage.setItem("torneiosRivalix", JSON.stringify(torneios));
   }, [torneios]);
 
-  // 3) salva tanto na lista geral quanto em "Meus Torneios"
   const salvarTorneio = (novoTorneio) => {
-    // atualiza lista pública (estado + localStorage)
     const listaPublicaAtualizada = [...torneios, novoTorneio];
     setTorneios(listaPublicaAtualizada);
-    localStorage.setItem("torneiosRivalix", JSON.stringify(listaPublicaAtualizada));
+    localStorage.setItem(
+      "torneiosRivalix",
+      JSON.stringify(listaPublicaAtualizada)
+    );
 
-    // atualiza lista pessoal
-    const meus = JSON.parse(localStorage.getItem("meusTorneiosRivalix") || "[]");
+    const meus = JSON.parse(
+      localStorage.getItem("meusTorneiosRivalix") || "[]"
+    );
     meus.push(novoTorneio);
     localStorage.setItem("meusTorneiosRivalix", JSON.stringify(meus));
   };
@@ -39,7 +39,7 @@ export default function Torneios() {
 
       <main className="main-content">
         {/* cabeçalho */}
-        <div className="container_descubra_torneios">
+        <div className={styles.container_descubra_torneios}>
           <div>
             <h1>Descubra Torneios</h1>
             <p>Participe de torneios dentro da Rivalix</p>
@@ -50,49 +50,159 @@ export default function Torneios() {
         </div>
 
         {/* navegação */}
-        <div className="rotas_pag_torneios">
-          <div className="links_pag_torneios">
-            <button className="botao_torneio_explorar" style={{ borderBottom: "2px solid #ff6a00" }}>
+        <div className={styles.rotas_pag_torneios}>
+          <div className={styles.links_pag_torneios}>
+            <button
+              className={styles.botao_torneio_explorar}
+              style={{ borderBottom: "2px solid #ff6a00" }}
+            >
               Explorar
             </button>
             <Link to="/meus-torneios">
-              <button className="botao_torneio_meus_torneios">Meus Torneios</button>
+              <button className={styles.botao_torneio_meus_torneios}>
+                Meus Torneios
+              </button>
             </Link>
           </div>
-          <div className="filtro_torneios">
+          <div className={styles.filtro_torneios}>
             <button>
               <i className="ri-filter-3-line"></i> Filtros
             </button>
           </div>
         </div>
 
-        <div className="linha_pag_torneio"></div>
+        <div className={styles.linha_pag_torneio}></div>
 
         {/* cards */}
-        <div className="container_cards_pag_torneio">
+        <div className={styles.container_cards_pag_torneio_title}>
           <h2>Populares</h2>
-          <div className="container_torneios_pag_torneio">
-            {torneios.map((t) => (
-              <CardTorneio
-                key={t.id}
-                id={t.id}
-                titulo={t.titulo}
-                foto={t.imgTorneio}
-                localizacao={t.localizacao}
-                modalidade={t.modalidade}
-                tipo={t.tipo}
-                data={t.data}
-                vagaRestante={t.vagasRestantes}
-                vagaTotal={t.totalVagas}
-                jogo={t.jogo}
-                estado={t.estado}
-              />
-            ))}
+          <div className={styles.container_cards_pag_torneio}>
+            <div className={styles.container_torneios_pag_torneio}>
+              {torneios.slice(0, 10).map((t) => (
+                <CardTorneio
+                  key={t.id}
+                  id={t.id}
+                  titulo={t.titulo}
+                  foto={t.imgTorneio}
+                  localizacao={t.localizacao}
+                  modalidade={t.modalidade}
+                  tipo={t.tipo}
+                  data={t.data}
+                  vagaRestante={t.vagasRestantes}
+                  vagaTotal={t.totalVagas}
+                  jogo={t.jogo}
+                  estado={t.localizacao}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className={styles.container_cards_pag_torneio_title}>
+          <h2>Presenciais</h2>
+          <div className={styles.container_cards_pag_torneio}>
+            <div className={styles.container_torneios_pag_torneio}>
+              {torneios
+                .filter((t) => t.tipo === "Presencial")
+                .slice(0, 10)
+                .map((t) => (
+                  <CardTorneio
+                    key={t.id}
+                    id={t.id}
+                    titulo={t.titulo}
+                    foto={t.imgTorneio}
+                    localizacao={t.localizacao}
+                    modalidade={t.modalidade}
+                    tipo={t.tipo}
+                    data={t.data}
+                    vagaRestante={t.vagasRestantes}
+                    vagaTotal={t.totalVagas}
+                    jogo={t.jogo}
+                    estado={t.localizacao}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+        <div className={styles.container_cards_pag_torneio_title}>
+          <h2>Online</h2>
+          <div className={styles.container_cards_pag_torneio}>
+            <div className={styles.container_torneios_pag_torneio}>
+              {torneios
+                .filter((t) => t.tipo === "Online")
+                .slice(0, 10)
+                .map((t) => (
+                  <CardTorneio
+                    key={t.id}
+                    id={t.id}
+                    titulo={t.titulo}
+                    foto={t.imgTorneio}
+                    localizacao={t.localizacao}
+                    modalidade={t.modalidade}
+                    tipo={t.tipo}
+                    data={t.data}
+                    vagaRestante={t.vagasRestantes}
+                    vagaTotal={t.totalVagas}
+                    jogo={t.jogo}
+                    estado={t.localizacao}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+        <div className={styles.container_cards_pag_torneio_title}>
+          <h2>Solo</h2>
+          <div className={styles.container_cards_pag_torneio}>
+            <div className={styles.container_torneios_pag_torneio}>
+              {torneios
+                .filter((t) => t.modalidade === "Solo")
+                .slice(0, 10)
+                .map((t) => (
+                  <CardTorneio
+                    key={t.id}
+                    id={t.id}
+                    titulo={t.titulo}
+                    foto={t.imgTorneio}
+                    localizacao={t.localizacao}
+                    modalidade={t.modalidade}
+                    tipo={t.tipo}
+                    data={t.data}
+                    vagaRestante={t.vagasRestantes}
+                    vagaTotal={t.totalVagas}
+                    jogo={t.jogo}
+                    estado={t.localizacao}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+        <div className={styles.container_cards_pag_torneio_title}>
+          <h2>Em Dupla</h2>
+          <div className={styles.container_cards_pag_torneio}>
+            <div className={styles.container_torneios_pag_torneio}>
+              {torneios
+                .filter((t) => t.modalidade === "Dupla")
+                .slice(0, 10)
+                .map((t) => (
+                  <CardTorneio
+                    key={t.id}
+                    id={t.id}
+                    titulo={t.titulo}
+                    foto={t.imgTorneio}
+                    localizacao={t.localizacao}
+                    modalidade={t.modalidade}
+                    tipo={t.tipo}
+                    data={t.data}
+                    vagaRestante={t.vagasRestantes}
+                    vagaTotal={t.totalVagas}
+                    jogo={t.jogo}
+                    estado={t.localizacao}
+                  />
+                ))}
+            </div>
           </div>
         </div>
       </main>
 
-      {/* modal */}
       <ModalCriarTorneio
         aberto={modalAberto}
         fechar={() => setModalAberto(false)}

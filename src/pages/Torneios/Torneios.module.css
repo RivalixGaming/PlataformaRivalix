@@ -1,0 +1,148 @@
+.container_descubra_torneios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 70px;
+}
+
+.container_descubra_torneios h1 {
+  margin-bottom: 15px;
+  font-size: 50px;
+}
+
+.container_descubra_torneios p {
+  font-size: 20px;
+}
+
+.container_descubra_torneios button {
+  font-size: 16px;
+  padding: 10px 25px 10px 18px;
+  border: 2px solid #ff6a00;
+  color: #ff6a00;
+  background: transparent;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.container_descubra_torneios button:hover {
+  box-shadow: 0 0 15px #ff6a00;
+}
+
+.container_descubra_torneios button span {
+  padding-right: 10px;
+}
+
+.rotas_pag_torneios {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 120px 0px 70px;
+}
+
+.rotas_pag_torneios button {
+  background: none;
+  border: 2px solid transparent;
+  color: var(--text-color);
+  font-size: 17px;
+  margin-right: 20px;
+  transition: 0.2s;
+}
+
+.menu_pag_torneios {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  background: black;
+}
+
+.linha_pag_torneio {
+  margin-top: 10px;
+  background-color: blueviolet;
+  width: 94%;
+  margin-left: 3%;
+  height: 2px;
+}
+
+.container_cards_pag_torneio_title h2 {
+  padding-top: 50px;
+  padding-left: 30px;
+}
+
+.container_cards_pag_torneio {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  margin-left: 2rem;
+}
+
+.container_torneios_pag_torneio {
+  display: flex;
+  gap: 2rem;
+}
+
+.container_torneios_pag_torneio > * {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  min-width: 220px;
+  flex-shrink: 0;
+}
+
+.container_cards_pag_torneio::-webkit-scrollbar {
+  height: 7px;
+}
+
+.container_cards_pag_torneio::-webkit-scrollbar-track {
+  border-radius: 10px;
+
+  background-color: rgba(129, 129, 129, 0.7);
+}
+
+.container_cards_pag_torneio::-webkit-scrollbar-thumb {
+  background-color: #ff6a00;
+  border-radius: 10px;
+}
+
+@media (max-width: 740px) {
+  .container_descubra_torneios {
+    text-align: center;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .rotas_pag_torneios {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .links_pag_torneios {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .filtro_torneios {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container_torneios_pag_torneio {
+    height: auto;
+    width: 100%;
+  }
+
+  .container_cards_pag_torneio_title h2 {
+    padding-left: 10px;
+  }
+
+  .container_cards_pag_torneio {
+    margin-left: 10px;
+  }
+
+  .container_cards_pag_torneio::-webkit-scrollbar {
+    display: none;
+  }
+}

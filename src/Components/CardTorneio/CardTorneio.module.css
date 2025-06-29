@@ -103,6 +103,7 @@
 @media (max-width: 767px) {
   .container_card_perfil {
     max-width: 100%;
+    min-width: 250px;
     flex: 1 1 100%;
     padding: 14px;
     gap: 10px;

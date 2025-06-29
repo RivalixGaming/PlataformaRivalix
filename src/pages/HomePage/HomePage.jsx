@@ -86,6 +86,7 @@ export default function Home() {
                   vagaRestante={torneio.vagasRestantes}
                   vagaTotal={torneio.totalVagas}
                   jogo={torneio.jogo}
+                  estado={torneio.localizacao}
                 />
               ))}
             </div>

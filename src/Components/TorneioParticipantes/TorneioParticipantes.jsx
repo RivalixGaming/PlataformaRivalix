@@ -1,7 +1,6 @@
 
 import style from "./TorneioParticipantes.module.css"
 import UserList from "../../Components/UserList/UserList"
-import torneios from "../../data/torneios"
 
 export default function TorneioParticipantes({ torneio }) {
   const quantidade = torneio.totalVagas - torneio.vagasRestantes;
