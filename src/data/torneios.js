@@ -26,7 +26,7 @@ const torneio = [
   {
     id: 2,
     titulo: "Torneio de Titãs",
-    localizacao: "São Paulo",
+    localizacao: "Online",
     modalidade: "Dupla",
     tipo: "Online",
     data: "12/09/2025",
@@ -44,7 +44,7 @@ const torneio = [
   {
     id: 3,
     titulo: "Torn",
-    localizacao: "São Paulo",
+    localizacao: "Online",
     modalidade: "Solo",
     tipo: "Online",
     data: "04/08/2025",
@@ -260,7 +260,7 @@ const torneio = [
   {
     id: 15,
     titulo: "FightZone",
-    localizacao: "Porto Alegre",
+    localizacao: "Online",
     modalidade: "Dupla",
     tipo: "Online",
     data: "08/10/2025",
@@ -314,7 +314,7 @@ const torneio = [
   {
     id: 18,
     titulo: "Luta Livre",
-    localizacao: "Manaus",
+    localizacao: "Online",
     modalidade: "Solo",
     tipo: "Online",
     data: "16/10/2025",
