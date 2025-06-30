@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './Navbar.css';
-import logoClaro from '../../assets/logoClaro.png';
-import logoDark from "../../assets/logoDark.png";
+import logoClaro from '../../assets/icon/logoClaro.svg';
+import logoDark from "../../assets/icon/logoEscuro.svg";
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
@@ -59,7 +59,7 @@ const Navbar = () => {
 
         <div className={`mobile-menu ${menuOpen ? 'active' : ''}`} role="navigation">
           <ul className="mobile-links">
-            <li><a href="#inicio">Início</a></li>
+            <li><Link to='/'>Início</Link></li>
             <li><Link to="/sobre">Sobre Nós</Link></li>
             <li>
               <label className="switch">

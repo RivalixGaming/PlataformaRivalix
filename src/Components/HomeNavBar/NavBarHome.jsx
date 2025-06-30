@@ -1,6 +1,6 @@
 import "./style.css";
-import logoClaro from '../../assets/logoClaro.png';
-import logoDark from "../../assets/logoDark.png";
+import logoClaro from '../../assets/icon/logoClaro.svg';
+import logoDark from "../../assets/icon/logoEscuro.svg";
 import iconUser from '/src/assets/icon-teste-2.png';
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
@@ -45,7 +45,6 @@ export default function NavBar() {
             key={theme}
             src={theme === 'dark' ? logoDark : logoClaro}
             alt="Logo Rivalix"
-            width="200px"
           />
         </div>
 

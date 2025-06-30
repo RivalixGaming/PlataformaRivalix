@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import "./Footer.css";
 
-import logoClaro from "../../assets/logoClaro.png";
-import logoDark from "../../assets/logoDark.png";
+import logoClaro from "../../assets/icon/logoClaro.svg";
+import logoDark from "../../assets/icon/logoEscuro.svg";
 
 import instagramIcon from "../../assets/icon/instagram.svg";
 import githubIcon from "../../assets/icon/mdi--github.svg";
 import twitterIcon from "../../assets/icon/prime--twitter (1).svg";
 
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
@@ -53,16 +54,10 @@ const Footer = () => {
               <strong>Rivalix</strong>
             </li>
             <li>
-              <a href="#inicio">Início</a>
+              <Link to="/">Inicio</Link>
             </li>
             <li>
-              <a href="#Eventos">FAQ</a>
-            </li>
-            <li>
-              <a href="#Loja">Loja</a>
-            </li>
-            <li>
-              <a href="#Sobre Nós">Sobre Nós</a>
+              <Link to="/sobre">Sobre</Link>
             </li>
           </ul>
         </div>
@@ -73,7 +68,7 @@ const Footer = () => {
               <strong>Contato</strong>
             </li>
             <li>
-              <a href="#">rivalix.oficial@gmail.com</a>
+              <a href="mailto:rivalix.oficial@gmail.com">rivalix.oficial@gmail.com</a>
             </li>
           </ul>
         </div>
