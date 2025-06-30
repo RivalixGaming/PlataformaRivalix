@@ -196,8 +196,14 @@ input:checked + .slider::before {
 @media (max-width: 768px) {
     .navbar{
         position: fixed;
-        height: 110px;
+        height: 100px;
     }
+
+    .logo img{
+        width: auto;
+        height: 70px;
+    }
+
     .hamburger {
       display: flex;
     }
@@ -239,10 +245,6 @@ input:checked + .slider::before {
       margin-bottom: 10px;
     }
 
-    .logo img{
-        width: auto;
-        height: 90px;
-    }
 }
 
 @media (max-width: 374px){
