@@ -45,6 +45,7 @@ export default function NavBar() {
             key={theme}
             src={theme === 'dark' ? logoDark : logoClaro}
             alt="Logo Rivalix"
+            style={{maxHeight:"120px"}}
           />
         </div>
 
