@@ -99,7 +99,7 @@
 }
 
 .footer-policy li a{
-    color: #1E1E1E;
+    color: var(--text-color);
 }
 
 @media (max-width: 1024px) {
