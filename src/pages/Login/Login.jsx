@@ -17,6 +17,7 @@ export default function LoginPage() {
   const [emailLogin, setEmailLogin] = useState("");
   const [senhaLogin, setSenhaLogin] = useState("");
 
+
   const navigate = useNavigate();
 
   const emailValido = (email) => email.includes("@");
@@ -179,7 +180,7 @@ export default function LoginPage() {
                   checked={acceptedTerms}
                   onChange={(e) => setAcceptedTerms(e.target.checked)}
                 />
-                <span> Aceito os <a href="#">termos de uso e privacidade</a></span>
+                <span> Aceito os <Link to="/lgpd">termos de uso e privacidade</Link></span>
               </label>
             )}
 

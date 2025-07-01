@@ -18,7 +18,9 @@ import Torenios from "../pages/Torneios/Torneios";
 import MeusTorneios from "../pages/Torneios/MeusTorneios.jsx";
 import Loja from "../pages/Loja/Loja.jsx";
 import DetalhesTorneio from '../pages/DetalhesTorneio/DetalhesTorneio.jsx'
-// Importando as páginas necessárias para as rotas
+import LGPD from "../pages/LGPD/LGPD.jsx";
+import Termos from "../pages/LGPD/Termos.jsx";
+// Import das páginas necessárias para as rotas
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +45,8 @@ export const router = createBrowserRouter([
       { path: "/meus-torneios", element: <MeusTorneios/>},
       { path: "/torneios/:id", element: <DetalhesTorneio/>},
       { path: "/loja", element: <Loja />},
+      { path: "/lgpd", element: <LGPD /> },
+      { path: "/termos", element: <Termos /> },
     ]
   }
 ]

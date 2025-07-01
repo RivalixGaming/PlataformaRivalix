@@ -1,0 +1,113 @@
+.corpo {
+    padding: 8rem 3rem;
+}
+
+.politicaContainer {
+  border-radius: 12px;
+  line-height: 1.7;
+  transition: background 0.3s ease;
+}
+
+.titulo {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.atualizacao {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.paragrafo {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.subtitulo {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.lista {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style: disc;
+}
+
+.lista li {
+  margin-bottom: 0.5rem;
+}
+
+.secao {
+  margin-bottom: 2rem;
+}
+
+.link {
+  color: var(--primary-color, #825add);
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.btnVoltar {
+  /* background: rgba(204, 204, 204, 0.25); */
+  background: var(--primary-color);
+  border: 1px solid var(--roxo-vivo);
+  border-radius: 8px;
+  padding: 0.3rem 0.3rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--roxo-vivo);
+  transition: 0.2s ease;
+  display: flex;
+}
+
+.btnVoltar:hover {
+  transform: translateX(-4px);
+  background-color: var(--roxo-vivo);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .politicaContainer {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .btnVoltar {
+    font-size: 1.4rem;
+    margin-left: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .politicaContainer {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .titulo {
+    font-size: 1.55rem;
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .btnVoltar {
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+  }
+}
