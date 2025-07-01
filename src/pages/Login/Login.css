@@ -131,6 +131,10 @@
   gap: 1rem;
 }
 
+.form-footer span {
+  font-size: 1rem;
+}
+
 .toggle-auth {
   font-size: 0.9rem;
   color: #fff;
@@ -207,6 +211,10 @@
 
   .auth-button {
     font-size: 0.95rem;
+  }
+
+  .form-footer span {
+  font-size: 0.8rem;
   }
 }
 

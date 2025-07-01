@@ -78,10 +78,10 @@ const Footer = () => {
         <p>©2025 Rivalix. Todos os direitos reservados</p>
         <ul className="footer-policy">
           <li>
-            <a href="#">Políticas e Termos</a>
+            <Link to="/termos">Termos de Uso</Link>
           </li>
           <li>
-            <a href="#">Privacidade e Segurança</a>
+            <Link to="/lgpd">Política e Privacidade</Link>
           </li>
           <li>
             <a href="#">Mapa do Site</a>
