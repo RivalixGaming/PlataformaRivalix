@@ -115,7 +115,7 @@ export default function LGPD() {
                     <section className={styles.secao}>
                         <h2 className={styles.subtitulo}>9. Contato</h2>
                         <p className={styles.paragrafo}>
-                          Email:<a href="malito:rivalix.oficial@gmail.com">E-mail: rivalix.oficial@gmail.com</a>
+                          Email:<a href="malito:rivalix.oficial@gmail.com">rivalix.oficial@gmail.com</a>
                         </p>
                     </section>
                 </div>
