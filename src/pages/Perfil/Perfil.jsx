@@ -10,7 +10,7 @@ import layoutStyles from "./PerfilPageLayout.module.css"; // Importa o novo CSS
 
 // Mock do usuário para testes
 const mockUser = {
-  nome: "JuiceFruit",
+  nome: "RivalixOficial",
   nivel: 15,
   foto: "", 
   banner: "",

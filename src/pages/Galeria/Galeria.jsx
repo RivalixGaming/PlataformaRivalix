@@ -3,14 +3,16 @@ import NavbarHome from '../../Components/HomeNavBar/NavBarHome';
 import ArteCard from '../../Components/ArteCard/ArteCard';
 import galeria1 from '../../assets/galeria1.png';
 import galeria2 from '../../assets/arteEquipeRivalix.png';
+import galeria3 from '../../assets/galeria3.png';
+import galeria4 from '../../assets/galeria4.png';
 import { Link } from 'react-router-dom';
 
 // artes aprovadas
 const artes = [
   { id: 1, imagem: galeria1 , autor: 'Rivalix', titulo: 'Arte da Semana', data: '14/06/2025' },
   { id: 2, imagem: galeria2 , autor: 'DogBlue', titulo: 'Equipe Rivalix', data: '14/06/2025' },
-  { id: 3, imagem: galeria1 , autor: 'Rivalix', titulo: 'Arte da Semana', data: '14/06/2025' },
-  { id: 4, imagem: galeria1 , autor: 'Rivalix', titulo: 'Arte da Semana', data: '14/06/2025' },
+  { id: 3, imagem: galeria3 , autor: 'Rivalix', titulo: 'Arte da Semana', data: '14/06/2025' },
+  { id: 4, imagem: galeria4 , autor: 'Rivalix', titulo: 'Arte da Semana', data: '14/06/2025' },
 ];
 
 export default function GaleriaPage() {

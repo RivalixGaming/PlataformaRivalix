@@ -2,7 +2,10 @@ import PostCard from "../../Components/Feed/PostCard";
 import styles from "./Feed.module.css";
 import NavbarHome from "../../Components/HomeNavBar/NavBarHome.jsx";
 import { useTheme } from '../../contexts/ThemeContext'; 
-import bannerExemplo from "../../assets/defaultBanner.png";
+import post1 from '../../assets/feed/1.png';
+import post2 from '../../assets/feed/2.png';
+import post3 from '../../assets/feed/3.png';
+import post4 from '../../assets/feed/4.png';
 import rivalix from "../../assets/LogoSolo.png";
 import Comercial from "../../assets/Comercial.Rivalix.mp4";
 
@@ -13,23 +16,37 @@ export default function FeedPage() {
     {
       autor: "RIVALIX",
       avatar: rivalix,
-      imagem:  Comercial,
-      legenda: "A Rivalidade se transforma em palco. Bem-vindo à Rivalix.",
+      imagem:  post1,
+      legenda: "Tem torneio rolando em nosso stand no demoday! Venha participar e ganhe um chaveiro de brinde!",
       verificado:true
     },
     {
       autor: "RIVALIX",
       avatar: rivalix,
-      imagem: bannerExemplo,
-      legenda: "Entre na arena...",
-      verificado: true
+      imagem:  post4,
+      legenda: "Os avatares dos membros da equipe Rivalix estão disponíveis! Personalize seu perfil!",
+      verificado:true
     },
     {
-      autor: "JuiceFruit",
+      autor: "RIVALIX",
       avatar: rivalix,
-      imagem: "",
-      legenda: "Em breve uma nova competição vem aí!",
-      verificado: true
+      imagem:  post2,
+      legenda: "Siga @rivalix.oficial no instagram e acesse nosso dossiê para conhecer mais o projeto!",
+      verificado:true
+    },
+    {
+      autor: "RIVALIX",
+      avatar: rivalix,
+      imagem:  post3,
+      legenda: "Conheça a equipe por trás da Rivalix! Estamos aqui para transformar a rivalidade em palco.",
+      verificado:true
+    },
+    {
+      autor: "RIVALIX",
+      avatar: rivalix,
+      imagem:  Comercial,
+      legenda: "A Rivalidade se transforma em palco. Bem-vindo à Rivalix.",
+      verificado:true
     },
   ];
 
